@@ -1,0 +1,5443 @@
+[
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Une nouvelle manière de piloter les audits internes",
+    "displayTitle": "Une nouvelle manière de piloter les audits internes",
+    "body": "<p>Bienvenue dans cette formation premium dédiée à l’automatisation et au pilotage des audits internes QHSE avec l’intelligence artificielle.</p><p>Dans de nombreuses organisations, les audits internes produisent une grande quantité d’informations utiles, mais ces données restent souvent dispersées, peu exploitées et difficiles à transformer en actions concrètes.</p><p>Cette formation vous montre comment passer d’un fonctionnement essentiellement manuel à un système structuré, automatisé et pilotable.</p><p>Vous allez découvrir comment créer une base d’audit exploitable, automatiser le traitement des constats, prioriser les actions, alimenter un dashboard dynamique et renforcer le suivi des responsables sans ressaisie inutile.</p><p>L’objectif n’est pas seulement de comprendre les principes. L’objectif est de construire une méthode réutilisable dans un environnement professionnel réel.</p>",
+    "_ariaLevel": 0,
+    "_id": "69aee727b8639100081eb54d",
+    "_parentId": "69aee701b8639100081eb54b",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Bien démarrer l’automatisation des audits",
+    "displayTitle": "Bien démarrer l’automatisation des audits",
+    "body": "<p>Dans tout système automatisé, la qualité du résultat dépend directement de la qualité des données d’entrée.</p><p>Avant d’automatiser la lecture des audits, de structurer les non-conformités avec l’IA, de générer des relances automatiques ou d’alimenter un dashboard de pilotage, il faut d’abord disposer d’une base d’audit claire, cohérente et exploitable.</p><p>Une base mal structurée produit rapidement des erreurs : champs incomplets, informations non homogènes, responsabilités floues, échéances mal suivies ou données impossibles à réutiliser dans les automatisations.</p><p>À l’inverse, une base bien conçue devient le socle du système. Elle permet de centraliser les constats, d’identifier les écarts, de suivre les statuts, de répartir les responsabilités et d’alimenter correctement tous les outils connectés.</p><p>Dans ce module, vous allez comprendre comment concevoir une base d’audit réellement exploitable dans un cadre professionnel, afin qu’elle puisse soutenir l’ensemble du workflow de pilotage.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0956b8639100081eb5e9",
+    "_parentId": "69af0951b8639100081eb5e8",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Les colonnes à prévoir",
+    "displayTitle": "Les colonnes à prévoir",
+    "body": "<p>Pour qu’une base d’audit soit exploitable dans un système automatisé, elle doit contenir des champs à la fois compréhensibles par l’humain et réutilisables par les outils.</p><p>Une structure trop pauvre empêche le suivi. Une structure trop floue bloque l’automatisation. L’objectif est donc de définir une base simple, mais suffisamment précise pour soutenir le pilotage.</p><p>Une base d’audit exploitable doit au minimum contenir les champs suivants :</p><ul><li><strong>ID_Audit</strong> : identifiant unique permettant de distinguer chaque enregistrement et d’éviter les confusions</li><li><strong>Processus audité</strong> : zone, activité ou processus concerné par le constat</li><li><strong>Écart identifié</strong> : description claire du problème observé pendant l’audit</li><li><strong>Gravité</strong> : niveau d’importance ou d’impact du constat</li><li><strong>Responsable</strong> : personne chargée du traitement ou du suivi</li><li><strong>Échéance</strong> : date limite attendue pour l’action ou la clôture</li><li><strong>Statut</strong> : état d’avancement du traitement</li></ul><p>Chaque colonne a une fonction précise dans le futur système automatisé. Ensemble, elles permettent de transformer un constat d’audit en donnée pilotable.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af09dbb8639100081eb5f5",
+    "_parentId": "69af097db8639100081eb5ed",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pourquoi automatiser la lecture ?",
+    "displayTitle": "Pourquoi automatiser la lecture ?",
+    "body": "<p>Lire manuellement les audits à chaque mise à jour fait perdre du temps et crée une dépendance humaine.</p><p>L’objectif de ce module est de mettre en place un scénario capable de lire automatiquement les audits ouverts ou en cours, sans intervention manuelle.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0a6bb8639100081eb5fd",
+    "_parentId": "69af0a6bb8639100081eb5fc",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Le rôle du déclencheur",
+    "displayTitle": "Le rôle du déclencheur",
+    "body": "<p>Le déclencheur est le point de départ du workflow.</p><p>C’est lui qui décide quand le scénario se lance et quelles données doivent être lues.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0aa7b8639100081eb60c",
+    "_parentId": "69af0aa7b8639100081eb60b",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pourquoi structurer les constats ?",
+    "displayTitle": "Pourquoi structurer les constats ?",
+    "body": "<p>Un constat d’audit rédigé librement est souvent difficile à comparer, prioriser ou traiter automatiquement.</p><p>L’objectif est de convertir un constat brut en non-conformité structurée, exploitable par le système.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0ae2b8639100081eb617",
+    "_parentId": "69af0ae2b8639100081eb616",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Ce que l’IA apporte",
+    "displayTitle": "Ce que l’IA apporte",
+    "body": "<p>L’IA permet de :</p><p>• reformuler proprement le constat<br>• expliciter la non-conformité<br>• qualifier le niveau de gravité<br>• estimer l’impact potentiel<br>• proposer une action corrective cohérente</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0ae7b8639100081eb61c",
+    "_parentId": "69af0ae7b8639100081eb61b",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Du constat à la décision",
+    "displayTitle": "Du constat à la décision",
+    "body": "<p>Une non-conformité structurée ne suffit pas.</p><p>Il faut encore décider quoi traiter en priorité, dans quel délai, et avec quel niveau d’attention.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0b1db8639100081eb62c",
+    "_parentId": "69af0b1db8639100081eb62b",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Les critères de décision",
+    "displayTitle": "Les critères de décision",
+    "body": "<p>La priorisation peut s’appuyer sur plusieurs critères :</p><p>• gravité du problème<br>• impact potentiel<br>• urgence opérationnelle<br>• contexte de l’audit</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0b2db8639100081eb631",
+    "_parentId": "69af0b2db8639100081eb630",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pourquoi centraliser ?",
+    "displayTitle": "Pourquoi centraliser ?",
+    "body": "<p>Une fois les audits lus, structurés et priorisés, il faut les stocker dans une base centrale unique.</p><p>Cette base devient le cœur opérationnel du système.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0b50b8639100081eb641",
+    "_parentId": "69af0b50b8639100081eb640",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Les données à centraliser",
+    "displayTitle": "Les données à centraliser",
+    "body": "<p>La base centrale doit contenir au minimum :</p><p>• la non-conformité structurée<br>• la priorité<br>• le responsable<br>• l’échéance<br>• le statut<br>• l’origine de l’audit</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0b53b8639100081eb646",
+    "_parentId": "69af0b53b8639100081eb645",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pourquoi visualiser ?",
+    "displayTitle": "Pourquoi visualiser ?",
+    "body": "<p>Un bon système d’audit ne produit pas seulement des données.</p><p>Il permet aussi de voir rapidement ce qui avance, ce qui bloque, et ce qui devient critique.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0b72b8639100081eb656",
+    "_parentId": "69af0b72b8639100081eb655",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Les indicateurs clés",
+    "displayTitle": "Les indicateurs clés",
+    "body": "<p>Un dashboard d’audit peut suivre par exemple :</p><p>• le taux de clôture<br>• les actions en retard<br>• le nombre d’audits réalisés<br>• la criticité moyenne</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0b76b8639100081eb65b",
+    "_parentId": "69af0b76b8639100081eb65a",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pourquoi automatiser les relances ?",
+    "displayTitle": "Pourquoi automatiser les relances ?",
+    "body": "<p>Même avec une base centrale et un dashboard, un plan d’actions peut s’enliser si les responsables ne sont pas relancés au bon moment.</p><p>L’automatisation permet d’éviter les oublis et de renforcer le suivi.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0b91b8639100081eb66b",
+    "_parentId": "69af0b91b8639100081eb66a",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Les critères typiques",
+    "displayTitle": "Les critères typiques",
+    "body": "<p>Une relance peut se déclencher lorsque :</p><p>• le statut est encore ouvert<br>• l’échéance approche<br>• un responsable est identifié<br>• l’action est encore non traitée</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0b95b8639100081eb670",
+    "_parentId": "69af0b95b8639100081eb66f",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pourquoi une boucle autonome ?",
+    "displayTitle": "Pourquoi une boucle autonome ?",
+    "body": "<p>Le système devient vraiment performant lorsque les mises à jour circulent automatiquement entre les outils, sans ressaisie manuelle.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0bb7b8639100081eb680",
+    "_parentId": "69af0bb7b8639100081eb67f",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Le principe de la boucle",
+    "displayTitle": "Le principe de la boucle",
+    "body": "<p>Une action mise à jour dans l’outil de suivi doit pouvoir mettre à jour automatiquement la base source.</p><p>Cela garantit la cohérence globale du système.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0bbbb8639100081eb685",
+    "_parentId": "69af0bbbb8639100081eb684",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Consignes de l’évaluation",
+    "displayTitle": "Consignes de l’évaluation",
+    "body": "<p>Cette évaluation finale vérifie votre capacité à comprendre et articuler l’ensemble du workflow automatisé de pilotage des audits internes.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af0cbfb8639100081eb694",
+    "_parentId": "69af0cbab8639100081eb693",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Objectifs du module",
+    "displayTitle": "Objectifs du module",
+    "body": "<p>À la fin de ce module, vous serez capable de :</p><ul><li>identifier les champs indispensables d’une base d’audit exploitable</li><li>comprendre le rôle métier de chaque colonne dans le futur système automatisé</li><li>distinguer une base de simple archivage d’une base conçue pour le pilotage</li><li>éviter les erreurs de structure qui bloquent les automatisations</li><li>préparer un fichier capable d’alimenter Make, l’IA et le dashboard de suivi</li></ul><p>Ce module ne consiste donc pas seulement à créer un tableau. Il consiste à poser les fondations d’un système fiable, durable et réutilisable.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af1311b8639100081eb696",
+    "_parentId": "69af12ffb8639100081eb695",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Une base propre = un système fiable",
+    "displayTitle": "Une base propre = un système fiable",
+    "body": "<p>La base d’audit constitue le point de départ du système.</p><p>Elle permet de :</p><ul><li>centraliser les constats d’audit</li><li>structurer les écarts de manière homogène</li><li>affecter les responsables</li><li>suivre les échéances</li><li>visualiser les statuts</li><li>éviter les doublons et les pertes d’information</li></ul><p>Plus la structure de départ est claire, plus le pilotage devient fluide, automatisable et fiable.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af132bb8639100081eb698",
+    "_parentId": "69af1326b8639100081eb697",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "longdescription": "",
+      "large": "course/en/assets/f8ebd4b028d6ba7a1c8e54b9c24820fe036c692e.png",
+      "small": "course/en/assets/f8ebd4b028d6ba7a1c8e54b9c24820fe036c692e.png",
+      "attribution": "",
+      "_url": "",
+      "_target": "_blank"
+    },
+    "_isScrollable": false,
+    "_defaultScrollPercent": 0
+  },
+  {
+    "_component": "matching",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Activité — À quoi sert chaque champ ?",
+    "displayTitle": "Activité — À quoi sert chaque champ ?",
+    "body": "<p>Associez chaque champ à sa bonne fonction dans le système automatisé.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af13d1b8639100081eb69c",
+    "_parentId": "69af13ccb8639100081eb69b",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Choose an option from each dropdown list and select Submit.",
+    "ariaQuestion": "",
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldResetAllAnswers": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": false,
+    "_isRandomQuestionOrder": false,
+    "_questionWeight": 1,
+    "_recordInteraction": true,
+    "_hasItemScoring": false,
+    "_allowOnlyUniqueAnswers": true,
+    "placeholder": "Please select an option",
+    "_items": [
+      {
+        "text": "ID_Audit",
+        "_options": [
+          {
+            "text": "Identifier chaque audit sans doublon",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Mesurer la criticité de l’écart",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Déclencher les relances temporelles",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Attribuer l’action à une personne",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "Processus audité",
+        "_options": [
+          {
+            "text": "Suivre la date limite de traitement",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Indiquer l’état d’avancement",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Situer l’écart dans le bon périmètre d’audit",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Évaluer le niveau de gravité",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "Écart identifié",
+        "_options": [
+          {
+            "text": "Décrire le constat à traiter",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Identifier le responsable de l’action",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Déterminer la fréquence du scénario Make",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Créer la vue dashboard",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "Gravité",
+        "_options": [
+          {
+            "text": "Identifier le processus concerné",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Repérer la ligne source dans Excel",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Visualiser le responsable dans Notion",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Évaluer le niveau de risque ou d’impact",
+            "_isCorrect": true,
+            "_score": 1
+          }
+        ]
+      },
+      {
+        "text": "Responsable",
+        "_options": [
+          {
+            "text": "Définir la priorité automatique",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Attribuer l’action à la bonne personne",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Créer l’identifiant unique",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Mesurer la fréquence des audits",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "Échéance",
+        "_options": [
+          {
+            "text": "Décrire le constat d’audit",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Déclencher le suivi temporel et les relances",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Associer l’audit à un processus",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Créer la structure de la base centrale",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "Statut",
+        "_options": [
+          {
+            "text": "Évaluer la gravité de l’écart",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Identifier le responsable",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Créer le déclencheur automatique",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Piloter l’avancement de l’action",
+            "_isCorrect": true,
+            "_score": 1
+          }
+        ]
+      }
+    ],
+    "_feedback": {
+      "title": "Correction de l’activité",
+      "correct": "<p>Très bien. Vous avez compris le rôle métier des principaux champs d’une base d’audit exploitable. Cette structure est indispensable pour permettre la lecture, le tri, la relance et le pilotage automatique.</p>",
+      "_incorrect": {
+        "final": "<p>Certaines associations ne sont pas correctes. Reprenez la logique de chaque champ : un bon système automatisé dépend d’une base claire, structurée et sans ambiguïté.</p>",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "À retenir",
+    "displayTitle": "À retenir",
+    "body": "<p>Une base bien structurée ne sert pas uniquement à stocker des données.</p><p>Elle permet de rendre les audits lisibles, exploitables et pilotables automatiquement.</p><p>Autrement dit, une bonne base n’est pas seulement un tableau : c’est le socle opérationnel qui permet à l’automatisation, à l’IA et au dashboard de fonctionner correctement.</p><p><strong>Message clé :</strong> quand la structure est claire, le système devient fiable. Quand la structure est floue, tout le reste se fragilise.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af1853b8639100081eb69e",
+    "_parentId": "69af183eb8639100081eb69d",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "La logique de construction",
+    "displayTitle": "La logique de construction",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69af18abb8639100081eb69f",
+    "_parentId": "69af097db8639100081eb5f0",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "1. Définir l’objectif de la base",
+        "body": "<p>Avant de créer des colonnes, il faut définir le rôle réel de la base. Ici, la base ne sert pas seulement à archiver des constats. Elle doit permettre de centraliser les audits, suivre les écarts, attribuer les responsabilités, piloter les échéances et alimenter les outils automatisés.</p>",
+        "_graphic": {
+          "src": "course/en/assets/3a85aa68a7efd8b458fdd931bd6cc9d4dd48807e.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "2. Créer les colonnes indispensables",
+        "body": "<p>La deuxième étape consiste à créer une structure simple mais exploitable. Chaque colonne doit répondre à un besoin métier précis : identifier, comprendre, attribuer, suivre ou piloter. Une colonne inutile alourdit la base. Une colonne manquante fragilise tout le système.</p>",
+        "_graphic": {
+          "src": "course/en/assets/dcc632ae3fb22781e6907994796cc9fbbe07a5aa.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "3. Uniformiser les valeurs",
+        "body": "<p>Une base fiable repose sur des valeurs homogènes. Les statuts, les niveaux de gravité, les noms de processus ou les formats de date doivent être normalisés. Sans cette cohérence, les filtres, les automatisations et les tableaux de bord deviennent instables.</p>",
+        "_graphic": {
+          "src": "course/en/assets/8d10d88450251651df704696e6e37d57bce0ba63.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "4. Vérifier la lisibilité métier",
+        "body": "<p>Avant toute automatisation, la base doit rester compréhensible pour un utilisateur métier. Si une personne ne peut pas relire facilement une ligne et comprendre le constat, le responsable, l’échéance et le statut, la structure n’est pas encore assez claire.</p>",
+        "_graphic": {
+          "src": "course/en/assets/06b50dd67161ffdf5be3b0cb3efeba9733ae520e.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "5. Préparer l’exploitation future",
+        "body": "<p>La dernière étape consiste à vérifier si la base pourra être utilisée par Make, par l’IA et par le dashboard. Autrement dit, la structure doit déjà être pensée comme un point de départ de workflow, et non comme un simple tableau isolé.</p>",
+        "_graphic": {
+          "src": "course/en/assets/b031ad257845e01744344a28a5edf6dbc287b43f.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Vidéo — Création de la base dans Excel ou Google Sheets",
+    "displayTitle": "Vidéo — Création de la base dans Excel ou Google Sheets",
+    "body": "<p>Dans cette démonstration, vous allez voir comment créer concrètement une base d’audit exploitable dans Excel ou Google Sheets.</p><p>Observez particulièrement :</p><ul><li>l’ordre de création des colonnes</li><li>la logique métier derrière chaque champ</li><li>la manière de nommer clairement les informations</li><li>les formats à rendre homogènes dès le départ</li><li>les choix qui facilitent ensuite l’automatisation et le pilotage</li></ul><p>L’objectif n’est pas seulement de reproduire un tableau. L’objectif est de comprendre pourquoi cette structure permettra ensuite de fiabiliser le reste du système.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af18f3b8639100081eb6a1",
+    "_parentId": "69af18eab8639100081eb6a0",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the play button to start the video.",
+    "_media": {
+      "mp4": "course/en/assets/c46bf89d74ceaa1bd64fbbc040a07fbf4eb72b94.mov",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "",
+      "cc": []
+    },
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_aspectRatio": "landscape",
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_offsetMediaControls": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": false,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "",
+      "inlineTranscriptCloseButton": "",
+      "inlineTranscriptBody": "",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "accordion",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pièges à éviter",
+    "displayTitle": "Pièges à éviter",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69af3b76b8639100081eb6a3",
+    "_parentId": "69af3b63b8639100081eb6a2",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the headings to find out more.",
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "Créer un tableau sans objectif clair",
+        "body": "<p>Une base d’audit ne doit pas être pensée comme un simple document de stockage. Elle doit être conçue comme un outil de suivi, de lecture et de pilotage. Sans objectif clair, la structure devient vite incohérente.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Multiplier les colonnes inutiles",
+        "body": "<p>Ajouter trop de colonnes complexifie la lecture et rend l’exploitation plus lourde. Chaque champ doit avoir une utilité précise dans le suivi métier ou dans le futur workflow automatisé.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Utiliser des statuts non homogènes",
+        "body": "<p>Des statuts comme “fait”, “terminé”, “clos”, “ok” ou “validé” utilisés sans règle claire créent rapidement de la confusion. Il faut définir une liste simple et stable de valeurs autorisées.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Décrire les écarts de manière trop vague",
+        "body": "<p>Un constat mal rédigé devient difficile à exploiter. La description doit être suffisamment claire pour comprendre le problème observé, sans ambiguïté et sans dépendre uniquement de la mémoire de l’auditeur.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Oublier l’usage futur de la base",
+        "body": "<p>Une base qui semble correcte pour un usage manuel peut devenir inutilisable dès qu’on veut l’automatiser. Il faut toujours penser dès le départ à la lecture par Make, à l’analyse par l’IA et à l’alimentation du dashboard.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      }
+    ],
+    "_shouldCollapseItems": true,
+    "_shouldExpandFirstItem": false,
+    "_isCenterAligned": false
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Quelle information est indispensable pour éviter les doublons ?",
+    "displayTitle": "Quelle information est indispensable pour éviter les doublons ?",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69af3c4db8639100081eb6a4",
+    "_parentId": "69af097eb8639100081eb5f3",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Choose {{#if _isRadio}}one option{{else}}one or more options{{/if}} then select Submit.",
+    "ariaQuestion": "",
+    "_items": [
+      {
+        "text": "L’identifiant unique",
+        "altText": "",
+        "_shouldBeSelected": true,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 1
+      },
+      {
+        "text": "Le commentaire auditeur",
+        "altText": "",
+        "_shouldBeSelected": false,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 0
+      },
+      {
+        "text": "La couleur de la ligne",
+        "altText": "",
+        "_shouldBeSelected": false,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 0
+      },
+      {
+        "text": "Le nom du document",
+        "altText": "",
+        "_shouldBeSelected": false,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 0
+      }
+    ],
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": false,
+    "_recordInteraction": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_selectable": 1,
+    "_feedback": {
+      "title": "",
+      "correct": "",
+      "_incorrect": {
+        "final": "",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Ce qu’il faut retenir",
+    "displayTitle": "Ce qu’il faut retenir",
+    "body": "<p>L’automatisation des audits commence par une base de données propre, cohérente et pensée pour le pilotage.</p><p>Dans ce module, vous avez vu qu’une base exploitable ne se limite pas à stocker des constats. Elle doit permettre d’identifier chaque audit, de comprendre les écarts, d’attribuer les responsabilités, de suivre les échéances et de visualiser l’avancement.</p><p>Vous avez également compris qu’une structure stable conditionne toute la suite du système : lecture automatisée, traitement intelligent, dashboard dynamique et relances ciblées.</p><p><strong>Message clé :</strong> sans structure stable, il n’y a ni lecture fiable, ni pilotage intelligent, ni relance pertinente.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af3cbdb8639100081eb6a6",
+    "_parentId": "69af3cb7b8639100081eb6a5",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Objectifs du module",
+    "displayTitle": "Objectifs du module",
+    "body": "<p>À la fin de ce module, vous saurez :</p><p>• créer un déclencheur dans Make<br>• connecter votre fichier d’audit<br>• lire automatiquement les lignes utiles<br>• préparer les données pour les étapes suivantes</p>",
+    "_ariaLevel": 0,
+    "_id": "69af3ffcb8639100081eb6aa",
+    "_parentId": "69af3fa9b8639100081eb6a9",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Lecture automatique des audits",
+    "displayTitle": "Lecture automatique des audits",
+    "body": "<p>Fichier d’audit → Make → extraction automatique des audits ouverts</p>",
+    "_ariaLevel": 0,
+    "_id": "69af4038b8639100081eb6ac",
+    "_parentId": "69af4035b8639100081eb6ab",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "longdescription": "",
+      "large": "course/en/assets/e44fef328a70598d105ae36014d6c7c439e8b3bf.png",
+      "small": "course/en/assets/e44fef328a70598d105ae36014d6c7c439e8b3bf.png",
+      "attribution": "",
+      "_url": "",
+      "_target": "_blank"
+    },
+    "_isScrollable": false,
+    "_defaultScrollPercent": 0
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Étapes du flux de lecture",
+    "displayTitle": "Étapes du flux de lecture",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69af411ab8639100081eb6b0",
+    "_parentId": "69af4115b8639100081eb6af",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "\t1.\tDéclenchement programmé",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/4b7a937c92da438e963f1456032c9076f6476061.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "\t2.\tConnexion au fichier",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/3dd39a9d86ce001e6253486cff24fe84001921ca.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "\t3.\tLecture des audits",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/f7054fc9ba54307a30c03a6e42d46641cac63011.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "\t4.\tExtraction des lignes utiles",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/dda72a83c6e9f716fe88d6806d3c643959dc30f3.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Message clé",
+    "displayTitle": "Message clé",
+    "body": "<p>Sans déclencheur, il n’y a pas de scénario.</p><p>Sans scénario, il n’y a pas d’automatisation.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af4fbcb8639100081eb6b6",
+    "_parentId": "69af4fb1b8639100081eb6b5",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Vidéo — Créer un scénario Make de lecture automatique",
+    "displayTitle": "Vidéo — Créer un scénario Make de lecture automatique",
+    "body": "<p>Dans cette vidéo, vous allez voir comment configurer Make pour lire automatiquement les audits depuis Excel ou Google Sheets.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af5005b8639100081eb6b7",
+    "_parentId": "69af0aa1b8639100081eb606",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the play button to start the video.",
+    "_media": {
+      "mp4": "course/en/assets/b71ced09320a352b74170860d0cda2956c518af7.mov",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "",
+      "cc": []
+    },
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_aspectRatio": "landscape",
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_offsetMediaControls": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": false,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "",
+      "inlineTranscriptCloseButton": "",
+      "inlineTranscriptBody": "",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "accordion",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Les points à vérifier pendant la démo",
+    "displayTitle": "Les points à vérifier pendant la démo",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69af5026b8639100081eb6ba",
+    "_parentId": "69af5023b8639100081eb6b9",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the headings to find out more.",
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "bonne connexion au fichier",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">bonne connexion au fichier</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "bonne feuille sélectionnée",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">bonne feuille sélectionnée</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "colonnes bien lues",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">colonnes bien lues</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "fréquence adaptée",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">fréquence adaptée</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "test concluant",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">test concluant</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      }
+    ],
+    "_shouldCollapseItems": true,
+    "_shouldExpandFirstItem": false,
+    "_isCenterAligned": false
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Résultat attendu",
+    "displayTitle": "Résultat attendu",
+    "body": "<p>À l’issue de cette étape, Make doit être capable de récupérer automatiquement les audits à traiter.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af50ccb8639100081eb6bc",
+    "_parentId": "69af50c8b8639100081eb6bb",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "À quoi sert le déclencheur dans Make ?",
+    "displayTitle": "À quoi sert le déclencheur dans Make ?",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69af5124b8639100081eb6bd",
+    "_parentId": "69af0a9db8639100081eb601",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Choose {{#if _isRadio}}one option{{else}}one or more options{{/if}} then select Submit.",
+    "ariaQuestion": "",
+    "_items": [
+      {
+        "text": "Lancer automatiquement le scénario à une fréquence définie",
+        "altText": "",
+        "_shouldBeSelected": true,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 1
+      }
+    ],
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": false,
+    "_recordInteraction": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_selectable": 1,
+    "_feedback": {
+      "title": "",
+      "correct": "",
+      "_incorrect": {
+        "final": "",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Synthèse",
+    "displayTitle": "Synthèse",
+    "body": "<p>Le déclencheur transforme un fichier d’audit statique en flux exploitable automatiquement.</p><p>C’est le point de départ opérationnel du système.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af5186b8639100081eb6bf",
+    "_parentId": "69af5180b8639100081eb6be",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Objectifs du module",
+    "displayTitle": "Objectifs du module",
+    "body": "<p>À la fin de ce module, vous saurez :</p><p>• transformer un constat libre en non-conformité claire<br>• utiliser GPT pour homogénéiser les formulations<br>• obtenir une sortie structurée avec gravité, impact et recommandation</p>",
+    "_ariaLevel": 0,
+    "_id": "69af522bb8639100081eb6c1",
+    "_parentId": "69af5228b8639100081eb6c0",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Avant / Après",
+    "displayTitle": "Avant / Après",
+    "body": "<p>Constat brut → reformulation IA → non-conformité structurée</p>",
+    "_ariaLevel": 0,
+    "_id": "69af524db8639100081eb6c3",
+    "_parentId": "69af5249b8639100081eb6c2",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "longdescription": "",
+      "large": "course/en/assets/4b7a937c92da438e963f1456032c9076f6476061.png",
+      "small": "course/en/assets/4b7a937c92da438e963f1456032c9076f6476061.png",
+      "attribution": "",
+      "_url": "",
+      "_target": "_blank"
+    },
+    "_isScrollable": false,
+    "_defaultScrollPercent": 0
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Prompt de structuration",
+    "displayTitle": "Prompt de structuration",
+    "body": "<p>L’IA doit recevoir un prompt précis, orienté métier et structuré pour produire une sortie exploitable dans un workflow d’audit.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af53d7b8639100081eb6c7",
+    "_parentId": "69af53d3b8639100081eb6c6",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "accordion",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Sorties attendues",
+    "displayTitle": "Sorties attendues",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69af5420b8639100081eb6ca",
+    "_parentId": "69af53ffb8639100081eb6c8",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the headings to find out more.",
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "Non-conformité reformulée",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">Non-conformité reformulée</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Niveau de gravité",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">Niveau de gravité</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Impact potentiel",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">Impact potentiel</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Recommandation corrective",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">Recommandation corrective</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      }
+    ],
+    "_shouldCollapseItems": true,
+    "_shouldExpandFirstItem": false,
+    "_isCenterAligned": false
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Vidéo — Make + GPT pour transformer un constat brut",
+    "displayTitle": "Vidéo — Make + GPT pour transformer un constat brut",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69af54deb8639100081eb6cb",
+    "_parentId": "69af0aebb8639100081eb620",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the play button to start the video.",
+    "_media": {
+      "mp4": "course/en/assets/c5c81b49033dfaef0072595c6688ad09387b7edb.mov",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "",
+      "cc": []
+    },
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_aspectRatio": "landscape",
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_offsetMediaControls": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": false,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "",
+      "inlineTranscriptCloseButton": "",
+      "inlineTranscriptBody": "",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Flux de structuration IA",
+    "displayTitle": "Flux de structuration IA",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69af54f3b8639100081eb6ce",
+    "_parentId": "69af54efb8639100081eb6cd",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "1.\tLecture du constat",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/2ee0aa682d564d3040859c7b7c7b0ab55858ec6f.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "2.\tEnvoi à GPT",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/dda72a83c6e9f716fe88d6806d3c643959dc30f3.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "3.\tReformulation structurée",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/4b7a937c92da438e963f1456032c9076f6476061.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "\t4.\tRetour vers le workflow",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/3dd39a9d86ce001e6253486cff24fe84001921ca.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Résultat pédagogique",
+    "displayTitle": "Résultat pédagogique",
+    "body": "<p>Cette étape rend les constats plus homogènes, comparables et directement exploitables pour la suite du pilotage.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af5563b8639100081eb6d5",
+    "_parentId": "69af555db8639100081eb6d4",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Quel est l’intérêt principal de la structuration IA ?",
+    "displayTitle": "Quel est l’intérêt principal de la structuration IA ?",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69af5665b8639100081eb6d6",
+    "_parentId": "69af0aefb8639100081eb625",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Choose {{#if _isRadio}}one option{{else}}one or more options{{/if}} then select Submit.",
+    "ariaQuestion": "",
+    "_items": [
+      {
+        "text": "Rendre les constats homogènes et exploitables automatiquement",
+        "altText": "",
+        "_shouldBeSelected": true,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 1
+      }
+    ],
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": false,
+    "_recordInteraction": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_selectable": 1,
+    "_feedback": {
+      "title": "",
+      "correct": "",
+      "_incorrect": {
+        "final": "",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Synthèse",
+    "displayTitle": "Synthèse",
+    "body": "<p>L’IA ne remplace pas l’analyse de l’auditeur.</p><p>Elle standardise, clarifie et accélère l’exploitation des constats.</p>",
+    "_ariaLevel": 0,
+    "_id": "69af56b4b8639100081eb6d8",
+    "_parentId": "69af56b0b8639100081eb6d7",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Objectifs du module",
+    "displayTitle": "Objectifs du module",
+    "body": "<p>À la fin de ce module, vous saurez :</p><p>• classer les actions selon leur criticité<br>• distinguer urgence, gravité et impact<br>• utiliser GPT pour prioriser de façon argumentée</p>",
+    "_ariaLevel": 0,
+    "_id": "69b07eaab8639100081eb6da",
+    "_parentId": "69b07ea6b8639100081eb6d9",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Priorisation intelligente",
+    "displayTitle": "Priorisation intelligente",
+    "body": "<p>Constat structuré → analyse IA → priorité + échéance suggérée</p>",
+    "_ariaLevel": 0,
+    "_id": "69b07eebb8639100081eb6dc",
+    "_parentId": "69b07edcb8639100081eb6db",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "longdescription": "",
+      "large": "course/en/assets/e44fef328a70598d105ae36014d6c7c439e8b3bf.png",
+      "small": "course/en/assets/dda72a83c6e9f716fe88d6806d3c643959dc30f3.png",
+      "attribution": "",
+      "_url": "",
+      "_target": "_blank"
+    },
+    "_isScrollable": false,
+    "_defaultScrollPercent": 0
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Tri automatique vs analyse IA",
+    "displayTitle": "Tri automatique vs analyse IA",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0841cb8639100081eb6e0",
+    "_parentId": "69b08418b8639100081eb6df",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "longdescription": "",
+      "large": "course/en/assets/2ee0aa682d564d3040859c7b7c7b0ab55858ec6f.png",
+      "small": "course/en/assets/dda72a83c6e9f716fe88d6806d3c643959dc30f3.png",
+      "attribution": "",
+      "_url": "",
+      "_target": "_blank"
+    },
+    "_isScrollable": false,
+    "_defaultScrollPercent": 0
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "New Component Title",
+    "displayTitle": "New Component Title",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b08450b8639100081eb6e4",
+    "_parentId": "69b0844bb8639100081eb6e3",
+    "_type": "component",
+    "_layout": "full"
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Vidéo — Générer une priorité intelligente",
+    "displayTitle": "Vidéo — Générer une priorité intelligente",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b084a3b8639100081eb6e5",
+    "_parentId": "69af0b30b8639100081eb635",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the play button to start the video.",
+    "_media": {
+      "mp4": "course/en/assets/69cdb7c521a17d060403ebf36f064c8e30a81799.mov",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "",
+      "cc": []
+    },
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_aspectRatio": "landscape",
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_offsetMediaControls": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": false,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "",
+      "inlineTranscriptCloseButton": "",
+      "inlineTranscriptBody": "",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Étapes du raisonnement IA",
+    "displayTitle": "Étapes du raisonnement IA",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b084cbb8639100081eb6e8",
+    "_parentId": "69b084c7b8639100081eb6e7",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "1.\tAnalyse du constat",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/3dd39a9d86ce001e6253486cff24fe84001921ca.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "2.\tQualification du risque",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/f7054fc9ba54307a30c03a6e42d46641cac63011.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "3.\tDétermination de la priorité",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/dda72a83c6e9f716fe88d6806d3c643959dc30f3.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "4.\tSuggestion d’échéance",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/2ee0aa682d564d3040859c7b7c7b0ab55858ec6f.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Résultat attendu",
+    "displayTitle": "Résultat attendu",
+    "body": "<p>L’action est enrichie d’une priorité cohérente et d’une logique de traitement plus pertinente.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b0856eb8639100081eb6ee",
+    "_parentId": "69b0856ab8639100081eb6ed",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "slider",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Évaluer un niveau de priorité",
+    "displayTitle": "Évaluer un niveau de priorité",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0863cb8639100081eb6ef",
+    "_parentId": "69af0b34b8639100081eb63a",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Drag the slider to make your choice and select Submit.",
+    "ariaQuestion": "",
+    "ariaScaleName": "",
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_recordInteraction": true,
+    "labelStart": "",
+    "labelEnd": "",
+    "_scaleStart": 1,
+    "_scaleEnd": 10,
+    "_scaleStep": 1,
+    "scaleStepPrefix": "",
+    "scaleStepSuffix": "",
+    "_correctAnswer": "",
+    "_correctRange": {
+      "_bottom": 0,
+      "_top": 0
+    },
+    "_showScaleIndicator": true,
+    "_showNumber": true,
+    "_showScale": true,
+    "_showScaleNumbers": true,
+    "_feedback": {
+      "title": "",
+      "correct": "",
+      "_incorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "New Component Title",
+    "displayTitle": "New Component Title",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b08663b8639100081eb6f1",
+    "_parentId": "69b08660b8639100081eb6f0",
+    "_type": "component",
+    "_layout": "full"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Objectifs du module",
+    "displayTitle": "Objectifs du module",
+    "body": "<p>À la fin de ce module, vous saurez :</p><p>• créer une base centrale exploitable<br>• mapper les données vers Notion, Airtable ou Excel central<br>• structurer un espace unique de pilotage</p>",
+    "_ariaLevel": 0,
+    "_id": "69b08b5fb8639100081eb6f3",
+    "_parentId": "69b08b5ab8639100081eb6f2",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "accordion",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pourquoi une base centrale change le pilotage",
+    "displayTitle": "Pourquoi une base centrale change le pilotage",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b08bb7b8639100081eb6f5",
+    "_parentId": "69b08bb4b8639100081eb6f4",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the headings to find out more.",
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "une seule source de vérité",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">une seule source de vérité</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "meilleure traçabilité",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">meilleure traçabilité</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "suivi unifié",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">suivi unifié</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "relances facilitées",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">relances facilitées</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      }
+    ],
+    "_shouldCollapseItems": true,
+    "_shouldExpandFirstItem": false,
+    "_isCenterAligned": false
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Message clé",
+    "displayTitle": "Message clé",
+    "body": "<p>Sans base centrale, les données restent dispersées.</p><p>Avec une base centrale, le pilotage devient cohérent.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b08c23b8639100081eb6f7",
+    "_parentId": "69b08c1db8639100081eb6f6",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Vidéo — Make vers Notion / Airtable",
+    "displayTitle": "Vidéo — Make vers Notion / Airtable",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b08c66b8639100081eb6f8",
+    "_parentId": "69af0b58b8639100081eb64a",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the play button to start the video.",
+    "_media": {
+      "mp4": "course/en/assets/0efc292a599b4fa563f41a096593f7e2a5ff7389.mp4",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "",
+      "cc": []
+    },
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_aspectRatio": "landscape",
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_offsetMediaControls": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": false,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "",
+      "inlineTranscriptCloseButton": "",
+      "inlineTranscriptBody": "",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Étapes de l’injection automatique",
+    "displayTitle": "Étapes de l’injection automatique",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b08c7eb8639100081eb6fb",
+    "_parentId": "69b08c79b8639100081eb6fa",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "\t1.\tPréparer la base cible",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/f7054fc9ba54307a30c03a6e42d46641cac63011.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "\t2.\tMapper les champs",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/3dd39a9d86ce001e6253486cff24fe84001921ca.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "3.\tEnvoyer les données",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/2ee0aa682d564d3040859c7b7c7b0ab55858ec6f.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "4.\tVérifier le résultat",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/4b7a937c92da438e963f1456032c9076f6476061.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Résultat attendu",
+    "displayTitle": "Résultat attendu",
+    "body": "<p>Les audits enrichis arrivent automatiquement dans un espace central, lisible et directement exploitable.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b08ce2b8639100081eb701",
+    "_parentId": "69b08cdcb8639100081eb700",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "matching",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Associer chaque propriété à son utilité",
+    "displayTitle": "Associer chaque propriété à son utilité",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b08d3bb8639100081eb702",
+    "_parentId": "69af0b5bb8639100081eb64f",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Choose an option from each dropdown list and select Submit.",
+    "ariaQuestion": "",
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldResetAllAnswers": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": false,
+    "_isRandomQuestionOrder": false,
+    "_questionWeight": 1,
+    "_recordInteraction": true,
+    "_hasItemScoring": false,
+    "_allowOnlyUniqueAnswers": false,
+    "placeholder": "Please select an option",
+    "_items": [
+      {
+        "text": "test",
+        "_options": [
+          {
+            "text": "testtt",
+            "_isCorrect": true,
+            "_score": 1
+          }
+        ]
+      }
+    ],
+    "_feedback": {
+      "title": "",
+      "correct": "",
+      "_incorrect": {
+        "final": "",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "New Component Title",
+    "displayTitle": "New Component Title",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b08d68b8639100081eb704",
+    "_parentId": "69b08d65b8639100081eb703",
+    "_type": "component",
+    "_layout": "full"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Objectifs du module",
+    "displayTitle": "Objectifs du module",
+    "body": "<p>À la fin de ce module, vous saurez :</p><p>• sélectionner les bons indicateurs<br>• structurer une vue de pilotage lisible<br>• transformer des audits en tableau de bord décisionnel</p>",
+    "_ariaLevel": 0,
+    "_id": "69b09364b8639100081eb706",
+    "_parentId": "69b09360b8639100081eb705",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Du suivi à la visibilité",
+    "displayTitle": "Du suivi à la visibilité",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0938cb8639100081eb708",
+    "_parentId": "69b09388b8639100081eb707",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "longdescription": "",
+      "large": "course/en/assets/33097312166d58ad267d347e53e12bb280a9c41e.png",
+      "small": "course/en/assets/2ee0aa682d564d3040859c7b7c7b0ab55858ec6f.png",
+      "attribution": "",
+      "_url": "",
+      "_target": "_blank"
+    },
+    "_isScrollable": false,
+    "_defaultScrollPercent": 0
+  },
+  {
+    "_component": "accordion",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pourquoi ces KPI sont utiles",
+    "displayTitle": "Pourquoi ces KPI sont utiles",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0944cb8639100081eb70c",
+    "_parentId": "69b09446b8639100081eb70b",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the headings to find out more.",
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "test",
+        "body": "<p>tset</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      }
+    ],
+    "_shouldCollapseItems": true,
+    "_shouldExpandFirstItem": false,
+    "_isCenterAligned": false
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Message clé",
+    "displayTitle": "Message clé",
+    "body": "<p>Le dashboard ne remplace pas l’analyse.</p><p>Il rend les signaux visibles et pilotables.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b099cbb8639100081eb70e",
+    "_parentId": "69b099c7b8639100081eb70d",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Vidéo — Dashboard Notion, Airtable ou Power BI",
+    "displayTitle": "Vidéo — Dashboard Notion, Airtable ou Power BI",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b099f9b8639100081eb70f",
+    "_parentId": "69af0b79b8639100081eb65f",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the play button to start the video.",
+    "_media": {
+      "mp4": "course/en/assets/9cf34fe0004a5b9d6de2f6b5bc3429999fb075ff.mov",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "",
+      "cc": []
+    },
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_aspectRatio": "landscape",
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_offsetMediaControls": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": false,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "",
+      "inlineTranscriptCloseButton": "",
+      "inlineTranscriptBody": "",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Étapes de construction du dashboard",
+    "displayTitle": "Étapes de construction du dashboard",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b09a24b8639100081eb712",
+    "_parentId": "69b09a1eb8639100081eb711",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "\t1.\tSélectionner les données utiles",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/4b7a937c92da438e963f1456032c9076f6476061.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "\t2.\tCréer les vues pertinentes",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/3dd39a9d86ce001e6253486cff24fe84001921ca.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "\t3.\tOrganiser les filtres",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/f7054fc9ba54307a30c03a6e42d46641cac63011.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "\t4.\tLire les indicateurs",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/33097312166d58ad267d347e53e12bb280a9c41e.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "New Component Title",
+    "displayTitle": "New Component Title",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b09a81b8639100081eb718",
+    "_parentId": "69b09a7eb8639100081eb717",
+    "_type": "component",
+    "_layout": "full"
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Quel indicateur aide à repérer les actions non traitées à temps ?",
+    "displayTitle": "Quel indicateur aide à repérer les actions non traitées à temps ?",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b09ac1b8639100081eb719",
+    "_parentId": "69af0b7bb8639100081eb664",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Choose {{#if _isRadio}}one option{{else}}one or more options{{/if}} then select Submit.",
+    "ariaQuestion": "",
+    "_items": [
+      {
+        "text": "Le nombre d’actions en retard",
+        "altText": "",
+        "_shouldBeSelected": true,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 1
+      }
+    ],
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": false,
+    "_recordInteraction": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_selectable": 1,
+    "_feedback": {
+      "title": "",
+      "correct": "",
+      "_incorrect": {
+        "final": "",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Synthèse",
+    "displayTitle": "Synthèse",
+    "body": "<p>Un bon dashboard rend l’état du système visible en un coup d’œil et facilite le pilotage.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b09af7b8639100081eb71b",
+    "_parentId": "69b09ae4b8639100081eb71a",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Objectifs du module",
+    "displayTitle": "Objectifs du module",
+    "body": "<p>À la fin de ce module, vous saurez :</p><p>• définir les critères de relance<br>• filtrer les actions à risque<br>• envoyer un email personnalisé automatiquement</p>",
+    "_ariaLevel": 0,
+    "_id": "69b09c4fb8639100081eb71d",
+    "_parentId": "69b09c4cb8639100081eb71c",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Logique de relance automatique",
+    "displayTitle": "Logique de relance automatique",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b09c7ab8639100081eb71f",
+    "_parentId": "69b09c76b8639100081eb71e",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "longdescription": "",
+      "large": "course/en/assets/43b2bd3a6d739b7f9b6470a752bed277994d5b88.png",
+      "small": "course/en/assets/43b2bd3a6d739b7f9b6470a752bed277994d5b88.png",
+      "attribution": "",
+      "_url": "",
+      "_target": "_blank"
+    },
+    "_isScrollable": false,
+    "_defaultScrollPercent": 0
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Détection → filtre → relance",
+    "displayTitle": "Détection → filtre → relance",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b09ceeb8639100081eb723",
+    "_parentId": "69b09ceab8639100081eb722",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "Détection",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/f7054fc9ba54307a30c03a6e42d46641cac63011.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "filtre",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/dda72a83c6e9f716fe88d6806d3c643959dc30f3.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "Relance",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/2ee0aa682d564d3040859c7b7c7b0ab55858ec6f.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Message clé",
+    "displayTitle": "Message clé",
+    "body": "<p>La relance automatique ne sert pas à “faire du bruit”.</p><p>Elle sert à réactiver les bonnes actions au bon moment.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b09d81b8639100081eb728",
+    "_parentId": "69b09d7db8639100081eb727",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Vidéo — Make + email automatique",
+    "displayTitle": "Vidéo — Make + email automatique",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b09dd5b8639100081eb729",
+    "_parentId": "69af0b97b8639100081eb674",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the play button to start the video.",
+    "_media": {
+      "mp4": "course/en/assets/1fae297bd6899b4135d92545d7cab92e24c65945.mp4",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "",
+      "cc": []
+    },
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_aspectRatio": "landscape",
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_offsetMediaControls": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": false,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "",
+      "inlineTranscriptCloseButton": "",
+      "inlineTranscriptBody": "",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "accordion",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Les points à configurer",
+    "displayTitle": "Les points à configurer",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b09de9b8639100081eb72c",
+    "_parentId": "69b09de5b8639100081eb72b",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the headings to find out more.",
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "filtre des actions concernées",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">filtre des actions concernées</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "objet du mail",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">objet du mail</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "variables dynamiques",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">variables dynamiques</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "corps du message",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">corps du message</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "test d’envoi",
+        "body": "<p class=\"p1\" style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p><ul style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\"><li><p class=\"p1\">test d’envoi</p></li></ul><p style=\"-webkit-text-stroke-width:0px;caret-color:rgb(0, 0, 0);color:rgb(0, 0, 0);font-style:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:auto;text-align:start;text-decoration:none;text-indent:0px;text-transform:none;white-space:normal;widows:auto;word-spacing:0px;\">&nbsp;</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      }
+    ],
+    "_shouldCollapseItems": true,
+    "_shouldExpandFirstItem": false,
+    "_isCenterAligned": false
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Résultat attendu",
+    "displayTitle": "Résultat attendu",
+    "body": "<p>Le responsable reçoit un message clair, contextualisé et envoyé automatiquement à la bonne fréquence.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b09e5eb8639100081eb72e",
+    "_parentId": "69b09e59b8639100081eb72d",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Dans quel cas une relance doit-elle partir ?",
+    "displayTitle": "Dans quel cas une relance doit-elle partir ?",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b09ea6b8639100081eb72f",
+    "_parentId": "69af0b9bb8639100081eb679",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Choose {{#if _isRadio}}one option{{else}}one or more options{{/if}} then select Submit.",
+    "ariaQuestion": "",
+    "_items": [
+      {
+        "text": "test",
+        "altText": "",
+        "_shouldBeSelected": true,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 1
+      }
+    ],
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": false,
+    "_recordInteraction": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_selectable": 1,
+    "_feedback": {
+      "title": "",
+      "correct": "",
+      "_incorrect": {
+        "final": "",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Synthèse",
+    "displayTitle": "Synthèse",
+    "body": "<p>Une bonne relance automatise le suivi sans dégrader la qualité de communication.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b09eeab8639100081eb731",
+    "_parentId": "69b09ee6b8639100081eb730",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Objectifs du module",
+    "displayTitle": "Objectifs du module",
+    "body": "<p>À la fin de ce module, vous saurez :</p><p>• synchroniser les modifications entre les outils<br>• maintenir une base toujours cohérente<br>• éviter les doubles saisies</p>",
+    "_ariaLevel": 0,
+    "_id": "69b0a00bb8639100081eb733",
+    "_parentId": "69b0a004b8639100081eb732",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Synchronisation bidirectionnelle",
+    "displayTitle": "Synchronisation bidirectionnelle",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a04bb8639100081eb735",
+    "_parentId": "69b0a048b8639100081eb734",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "longdescription": "",
+      "large": "course/en/assets/d77fe9b293dd91f9632563db52385eba54193a7f.png",
+      "small": "course/en/assets/d77fe9b293dd91f9632563db52385eba54193a7f.png",
+      "attribution": "",
+      "_url": "",
+      "_target": "_blank"
+    },
+    "_isScrollable": false,
+    "_defaultScrollPercent": 0
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Mise à jour terrain → Make → base source",
+    "displayTitle": "Mise à jour terrain → Make → base source",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a110b8639100081eb739",
+    "_parentId": "69b0a108b8639100081eb738",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "Mise à jour terrain ",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/4b7a937c92da438e963f1456032c9076f6476061.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": " Make",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/dda72a83c6e9f716fe88d6806d3c643959dc30f3.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "base source",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/e44fef328a70598d105ae36014d6c7c439e8b3bf.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Message clé",
+    "displayTitle": "Message clé",
+    "body": "<p>Une seule modification suffit.</p><p>Le système répercute automatiquement l’information dans les autres outils.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b0a15bb8639100081eb73e",
+    "_parentId": "69b0a157b8639100081eb73d",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Vidéo — Notion / Make / Excel synchronisés",
+    "displayTitle": "Vidéo — Notion / Make / Excel synchronisés",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a1c0b8639100081eb73f",
+    "_parentId": "69af0bbeb8639100081eb689",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the play button to start the video.",
+    "_media": {
+      "mp4": "course/en/assets/0be572c9430befe85b4cfeefe71bec60cccb8795.mov",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "",
+      "cc": []
+    },
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": false,
+    "_startVolume": "80%",
+    "_allowFullScreen": false,
+    "_aspectRatio": "landscape",
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_offsetMediaControls": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": false,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "",
+      "inlineTranscriptCloseButton": "",
+      "inlineTranscriptBody": "",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    },
+    "_playerOptions": ""
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": " Étapes de la synchronisation",
+    "displayTitle": " Étapes de la synchronisation",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a1d4b8639100081eb742",
+    "_parentId": "69b0a1cfb8639100081eb741",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "\t1.\tMise à jour dans l’outil de suivi",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/33097312166d58ad267d347e53e12bb280a9c41e.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "\t2.\tDétection par Make",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/2ee0aa682d564d3040859c7b7c7b0ab55858ec6f.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "3.\tMise à jour de la base source",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/e44fef328a70598d105ae36014d6c7c439e8b3bf.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "\t4.\tActualisation du pilotage",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/dda72a83c6e9f716fe88d6806d3c643959dc30f3.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Résultat attendu",
+    "displayTitle": "Résultat attendu",
+    "body": "<p>La donnée reste alignée entre les outils, sans double saisie et sans rupture de traçabilité.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b0a246b8639100081eb748",
+    "_parentId": "69b0a242b8639100081eb747",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Quel est le principal avantage d’une boucle autonome de suivi ?",
+    "displayTitle": "Quel est le principal avantage d’une boucle autonome de suivi ?",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a28eb8639100081eb74a",
+    "_parentId": "69af0bc0b8639100081eb68e",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Choose {{#if _isRadio}}one option{{else}}one or more options{{/if}} then select Submit.",
+    "ariaQuestion": "",
+    "_items": [
+      {
+        "text": "Maintenir les données cohérentes entre les outils sans ressaisie manuelle",
+        "altText": "",
+        "_shouldBeSelected": true,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 1
+      }
+    ],
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": false,
+    "_recordInteraction": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_selectable": 1,
+    "_feedback": {
+      "title": "",
+      "correct": "",
+      "_incorrect": {
+        "final": "",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Synthèse",
+    "displayTitle": "Synthèse",
+    "body": "<p>La boucle autonome transforme un workflow automatisé en système vivant, fiable et durable.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b0a2c3b8639100081eb74c",
+    "_parentId": "69b0a2acb8639100081eb74b",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Le cycle complet du système",
+    "displayTitle": "Le cycle complet du système",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a349b8639100081eb74e",
+    "_parentId": "69b0a346b8639100081eb74d",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "longdescription": "",
+      "large": "course/en/assets/cf43d0b24022c447bed4afbcfb7286af12643b21.png",
+      "small": "course/en/assets/cf43d0b24022c447bed4afbcfb7286af12643b21.png",
+      "attribution": "",
+      "_url": "",
+      "_target": "_blank"
+    },
+    "_isScrollable": false,
+    "_defaultScrollPercent": 0
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Ce qui est évalué",
+    "displayTitle": "Ce qui est évalué",
+    "body": "<p>Vous serez évalué sur :</p><p>• la structure de la base d’audit<br>• la lecture automatique des audits<br>• la structuration IA<br>• la priorisation<br>• la centralisation<br>• le pilotage par dashboard<br>• les relances automatiques<br>• la synchronisation finale</p>",
+    "_ariaLevel": 0,
+    "_id": "69b0a37fb8639100081eb752",
+    "_parentId": "69b0a37ab8639100081eb751",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "New Component Title",
+    "displayTitle": "New Component Title",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a3d4b8639100081eb756",
+    "_parentId": "69b0a3a0b8639100081eb755",
+    "_type": "component",
+    "_layout": "full"
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "New Component Title",
+    "displayTitle": "New Component Title",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a3e1b8639100081eb758",
+    "_parentId": "69b0a3dbb8639100081eb757",
+    "_type": "component",
+    "_layout": "full"
+  },
+  {
+    "_component": "matching",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "New Component Title",
+    "displayTitle": "New Component Title",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a3f9b8639100081eb75a",
+    "_parentId": "69b0a3f5b8639100081eb759",
+    "_type": "component",
+    "_layout": "full"
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "New Component Title",
+    "displayTitle": "New Component Title",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a424b8639100081eb75c",
+    "_parentId": "69b0a40cb8639100081eb75b",
+    "_type": "component",
+    "_layout": "full"
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "New Component Title",
+    "displayTitle": "New Component Title",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a441b8639100081eb75e",
+    "_parentId": "69b0a43bb8639100081eb75d",
+    "_type": "component",
+    "_layout": "full"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Félicitations",
+    "displayTitle": "Félicitations",
+    "body": "<p>Vous disposez maintenant d’une vision complète pour concevoir un système automatisé de pilotage des audits internes QHSE avec l’IA.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b0a480b8639100081eb762",
+    "_parentId": "69b0a44fb8639100081eb761",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Les outils du workflow",
+    "displayTitle": "Les outils du workflow",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b0a515b8639100081eb764",
+    "_parentId": "69aee7a5b8639100081eb559",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "Excel / Google Sheets",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/3dd39a9d86ce001e6253486cff24fe84001921ca.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "Make",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/4b7a937c92da438e963f1456032c9076f6476061.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "GPT",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/d77fe9b293dd91f9632563db52385eba54193a7f.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "Notion / Airtable",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/2ee0aa682d564d3040859c7b7c7b0ab55858ec6f.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "Email / Outlook / Gmail",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/dda72a83c6e9f716fe88d6806d3c643959dc30f3.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Comment choisir vos outils",
+    "displayTitle": "Comment choisir vos outils",
+    "body": "<p>Le meilleur système n’est pas forcément le plus complexe.</p><p>Il doit surtout être adapté à votre maturité digitale, à vos besoins terrain et à votre capacité de déploiement.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b0a59db8639100081eb76b",
+    "_parentId": "69b0a581b8639100081eb76a",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "accordion",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Les bénéfices concrets du parcours",
+    "displayTitle": "Les bénéfices concrets du parcours",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b1e2b2b8639100081eb76d",
+    "_parentId": "69b1e29bb8639100081eb76c",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the headings to find out more.",
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "Structurer une base d’audit exploitable",
+        "body": "<p>Vous apprendrez à définir les bonnes colonnes, les bons statuts et les bonnes informations pour transformer un simple relevé d’audit en base de pilotage fiable.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Automatiser le traitement des constats",
+        "body": "<p>Vous verrez comment Make peut lire automatiquement les données, appliquer des règles métier, détecter les cas prioritaires et préparer les flux de traitement sans intervention manuelle répétitive.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Apporter une couche d’analyse intelligente",
+        "body": "<p>Vous comprendrez comment l’IA peut enrichir le pilotage en aidant à reformuler les constats, structurer les non-conformités et suggérer une priorisation plus pertinente selon le contexte.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Piloter dans la durée",
+        "body": "<p>Vous découvrirez comment centraliser les données, visualiser l’état des audits, suivre les actions ouvertes et automatiser les relances pour maintenir un système vivant dans le temps.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      }
+    ],
+    "_shouldCollapseItems": true,
+    "_shouldExpandFirstItem": false,
+    "_isCenterAligned": false
+  },
+  {
+    "_component": "narrative",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Vue d’ensemble du système que vous allez construire",
+    "displayTitle": "Vue d’ensemble du système que vous allez construire",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b1e353b8639100081eb76f",
+    "_parentId": "69b1e33bb8639100081eb76e",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_hasNavigationInTextArea": false,
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "1. Base d’audit",
+        "body": "<p>Vous commencez par construire une base claire, exploitable et cohérente. Cette base devient le point d’entrée de tout le système.</p>",
+        "_graphic": {
+          "src": "course/en/assets/475c0aa5c79df9f3f2f0014cb7b6f659e0f20f13.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "2. Lecture automatisée",
+        "body": "<p>Le scénario automatisé lit les constats, détecte les nouvelles données et prépare le traitement sans ressaisie manuelle.</p>",
+        "_graphic": {
+          "src": "course/en/assets/929f0ac9c6f6ad4be10e84f73d45c56fb4eb5af9.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "3. Structuration intelligente",
+        "body": "<p>Les constats sont reformulés, clarifiés et transformés en données exploitables pour le suivi des non-conformités et des actions.</p>",
+        "_graphic": {
+          "src": "course/en/assets/34ee898a2ba00c266a526d96a65967decefe4206.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "4. Pilotage centralisé",
+        "body": "<p>Les informations alimentent une base connectée et un dashboard permettant de suivre l’état du système en temps réel.</p>",
+        "_graphic": {
+          "src": "course/en/assets/0b58742e5f5ba3c94a597e5131e069daa53f1c80.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "5. Relances et suivi",
+        "body": "<p>Les responsables sont relancés automatiquement et le pilotage devient continu, plus fiable et plus professionnel.</p>",
+        "_graphic": {
+          "src": "course/en/assets/107726d215347f529d5c9f8db6b639dc5c476485.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ]
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Profils concernés",
+    "displayTitle": "Profils concernés",
+    "body": "<p>Cette formation s’adresse en priorité aux professionnels qui souhaitent moderniser la gestion des audits internes et passer à un pilotage plus structuré.</p><ul><li>Responsables QHSE</li><li>Coordinateurs qualité ou HSE</li><li>Auditeurs internes</li><li>Consultants en amélioration des systèmes de management</li><li>Managers souhaitant mieux exploiter les constats d’audit</li></ul><p>Aucun niveau avancé en développement n’est nécessaire pour comprendre la logique générale. La formation a été pensée pour rester pédagogique, progressive et orientée usage métier.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b1e3fdb8639100081eb776",
+    "_parentId": "69b1e3ecb8639100081eb775",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Conseils pour bien suivre le parcours",
+    "displayTitle": "Conseils pour bien suivre le parcours",
+    "body": "<p>Pour tirer le meilleur parti de cette formation, il est recommandé de suivre les modules dans l’ordre.</p><p>Chaque module construit une partie du système final. La progression a donc été conçue pour vous permettre de comprendre la logique globale, puis de la reproduire étape par étape.</p><p>Dans les modules de démonstration, observez particulièrement la structure des données, les règles de traitement et les liens entre les outils. Ce sont eux qui font la solidité du système.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b1e443b8639100081eb778",
+    "_parentId": "69b1e431b8639100081eb777",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Sans base propre, pas d’automatisation fiable",
+    "displayTitle": "Sans base propre, pas d’automatisation fiable",
+    "body": "<p>Le réflexe le plus courant est de vouloir automatiser rapidement les traitements.</p><p>En réalité, un système performant ne commence jamais par l’automatisation. Il commence par une structure de données claire, stable et logique.</p><p>Dans le cadre des audits internes, cette base doit permettre à la fois de comprendre le constat, de le suivre dans le temps, de l’attribuer à un responsable et de l’intégrer dans une logique de pilotage.</p><p>C’est cette base qui va conditionner la qualité des analyses, des relances, des visualisations et du suivi global.</p><p><strong>Message clé :</strong> une bonne automatisation ne corrige pas une mauvaise structure. Elle amplifie une bonne structure.</p>",
+    "_ariaLevel": 0,
+    "_id": "69b32023b8639100081eb784",
+    "_parentId": "69b32012b8639100081eb783",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  },
+  {
+    "_component": "accordion",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Les conséquences d’une base bien ou mal structurée",
+    "displayTitle": "Les conséquences d’une base bien ou mal structurée",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b330c0b8639100081eb789",
+    "_parentId": "69b330bbb8639100081eb788",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Select the headings to find out more.",
+    "_setCompletionOn": "allItems",
+    "_items": [
+      {
+        "title": "Quand la structure est claire",
+        "body": "<p>Les constats sont homogènes, les responsabilités sont visibles, les échéances peuvent être suivies et les outils automatisés peuvent traiter l’information sans ambiguïté.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Quand la structure est incomplète",
+        "body": "<p>Les audits deviennent difficiles à relire, les actions sont mal suivies, certaines données ne peuvent pas être exploitées et le pilotage perd en fiabilité.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Quand la structure est floue",
+        "body": "<p>Les termes changent d’une ligne à l’autre, les statuts ne veulent pas dire la même chose pour tous et les automatisations produisent rapidement des erreurs ou des incohérences.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Pourquoi cela compte pour la suite",
+        "body": "<p>Les prochains modules s’appuient tous sur cette base : lecture automatisée, structuration des constats, alimentation de la base centrale, dashboard et relances. Si la structure de départ est solide, tout le système gagne en cohérence.</p>",
+        "_titleIcon": "",
+        "_imageAlignment": "full",
+        "_graphic": {
+          "alt": "",
+          "src": "",
+          "attribution": ""
+        },
+        "_classes": ""
+      }
+    ],
+    "_shouldCollapseItems": true,
+    "_shouldExpandFirstItem": false,
+    "_isCenterAligned": false
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pourquoi la colonne “Responsable” est-elle importante ?",
+    "displayTitle": "Pourquoi la colonne “Responsable” est-elle importante ?",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b34f78b8639100081eb797",
+    "_parentId": "69b34f4ab8639100081eb796",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Choose {{#if _isRadio}}one option{{else}}one or more options{{/if}} then select Submit.",
+    "ariaQuestion": "",
+    "_items": [
+      {
+        "text": "Parce qu’elle remplace la colonne Statut",
+        "altText": "",
+        "_shouldBeSelected": false,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 0
+      },
+      {
+        "text": "Parce qu’elle calcule la gravité",
+        "altText": "",
+        "_shouldBeSelected": false,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 0
+      },
+      {
+        "text": "Parce qu’elle désigne la personne en charge du suivi",
+        "altText": "",
+        "_shouldBeSelected": true,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 1
+      },
+      {
+        "text": "Parce qu’elle génère automatiquement les audits",
+        "altText": "",
+        "_shouldBeSelected": false,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 0
+      }
+    ],
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": false,
+    "_recordInteraction": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_selectable": 1,
+    "_feedback": {
+      "title": "",
+      "correct": "",
+      "_incorrect": {
+        "final": "",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "mcq",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "Pourquoi faut-il uniformiser les valeurs dans une base d’audit ?",
+    "displayTitle": "Pourquoi faut-il uniformiser les valeurs dans une base d’audit ?",
+    "body": "",
+    "_ariaLevel": 0,
+    "_id": "69b34f7db8639100081eb799",
+    "_parentId": "69b34f79b8639100081eb798",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": "Choose {{#if _isRadio}}one option{{else}}one or more options{{/if}} then select Submit.",
+    "ariaQuestion": "",
+    "_items": [
+      {
+        "text": "Pour supprimer la nécessité d’un dashboard",
+        "altText": "",
+        "_shouldBeSelected": false,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 0
+      },
+      {
+        "text": "Pour rendre les filtres, les automatisations et le pilotage fiables",
+        "altText": "",
+        "_shouldBeSelected": true,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 1
+      },
+      {
+        "text": "Pour rendre le fichier plus décoratif",
+        "altText": "",
+        "_shouldBeSelected": false,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 0
+      },
+      {
+        "text": "Pour ajouter plus de texte dans les lignes",
+        "altText": "",
+        "_shouldBeSelected": false,
+        "_isPartlyCorrect": false,
+        "feedback": "",
+        "_score": 0
+      }
+    ],
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldDisplayAttempts": false,
+    "_isRandom": false,
+    "_recordInteraction": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_selectable": 1,
+    "_feedback": {
+      "title": "",
+      "correct": "",
+      "_incorrect": {
+        "final": "",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    },
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_isResetOnRevisit": "false",
+    "_isA11yCompletionDescriptionEnabled": true,
+    "title": "La suite du parcours",
+    "displayTitle": "La suite du parcours",
+    "body": "<p>Vous pouvez maintenant passer au module suivant, consacré à la lecture automatisée des audits.</p><p>Cette prochaine étape vous montrera comment exploiter la base que vous venez de structurer pour permettre à Make de lire les données, détecter les éléments utiles et préparer le traitement automatisé.</p><p>Autrement dit, le module 1 a posé les fondations. Le module 2 va commencer à mettre la mécanique en mouvement.</p><p><a class=\"custom-nav-btn secondary\" href=\"#/id/course\">← Retour à l’accueil premium</a></p><p><a class=\"custom-nav-btn primary\" href=\"#/id/69af0a49b8639100081eb5f8\">Passer au module suivant →</a></p><p>&nbsp;</p><p>&nbsp;</p>",
+    "_ariaLevel": 0,
+    "_id": "69b3507bb8639100081eb79b",
+    "_parentId": "69b35064b8639100081eb79a",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    },
+    "_vanilla": {
+      "_textAlignment": {
+        "_title": "",
+        "_body": "",
+        "_instruction": ""
+      }
+    },
+    "instruction": ""
+  }
+]

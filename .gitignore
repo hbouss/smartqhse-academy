@@ -1,0 +1,59 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.sqlite3
+*.log
+*.pot
+
+# Virtual environments
+.venv/
+venv/
+lms-backend/.venv/
+.venv*/
+venv*/
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Django generated media/static
+lms-backend/media/
+lms-backend/staticfiles/
+
+# Never track heavy exported media anywhere
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.zip
+*.rar
+*.7z
+*.pdf
+
+# Adapt exported heavy assets if any
+lms-backend/adapt_modules/**/assets/
+lms-backend/adapt_modules/**/*.mp4
+lms-backend/adapt_modules/**/*.mov
+lms-backend/adapt_modules/**/*.zip
+
+# Certificates generated at runtime
+lms-backend/media/certificates/
+
+# PyCharm / IDE
+.idea/
+*.iml
+
+# Node / Next
+lms-frontend/node_modules/
+lms-frontend/.next/
+lms-frontend/out/
+
+# Misc
+coverage/
+dist/
+build/
