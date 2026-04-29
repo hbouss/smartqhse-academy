@@ -4,103 +4,126 @@ from pathlib import Path
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.utils import timezone
-from PIL import Image, ImageDraw, ImageFont
+
+from reportlab.lib.colors import HexColor, white
+from reportlab.lib.utils import ImageReader
+from reportlab.pdfbase.pdfmetrics import registerFont, stringWidth
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfgen import canvas
 
 from .models import Certificate
 
 
-def _load_font(size: int, bold: bool = False):
-    font_candidates = []
-
-    if bold:
-        font_candidates.extend([
-            Path(settings.BASE_DIR) / "certificates" / "assets" / "fonts" / "DejaVuSans-Bold.ttf",
-            Path("/Library/Fonts/Arial Bold.ttf"),
-            Path("/System/Library/Fonts/Supplemental/Arial Bold.ttf"),
-            Path("/System/Library/Fonts/Supplemental/Helvetica Bold.ttf"),
-        ])
-    else:
-        font_candidates.extend([
-            Path(settings.BASE_DIR) / "certificates" / "assets" / "fonts" / "DejaVuSans.ttf",
-            Path("/Library/Fonts/Arial.ttf"),
-            Path("/System/Library/Fonts/Supplemental/Arial.ttf"),
-            Path("/System/Library/Fonts/Supplemental/Helvetica.ttc"),
-        ])
-
-    for font_path in font_candidates:
-        if font_path.exists():
-            return ImageFont.truetype(str(font_path), size=size)
-
-    return ImageFont.load_default()
+FONT_REGULAR_NAME = "Helvetica"
+FONT_BOLD_NAME = "Helvetica-Bold"
+FONTS_REGISTERED = False
 
 
-def _text_width(draw, text, font):
-    bbox = draw.textbbox((0, 0), text, font=font)
-    return bbox[2] - bbox[0]
+def _register_custom_fonts():
+    global FONTS_REGISTERED, FONT_REGULAR_NAME, FONT_BOLD_NAME
+
+    if FONTS_REGISTERED:
+        return
+
+    regular_candidates = [
+        Path(settings.BASE_DIR) / "certificates" / "assets" / "fonts" / "DejaVuSans.ttf",
+        Path("/Library/Fonts/Arial.ttf"),
+        Path("/System/Library/Fonts/Supplemental/Arial.ttf"),
+    ]
+    bold_candidates = [
+        Path(settings.BASE_DIR) / "certificates" / "assets" / "fonts" / "DejaVuSans-Bold.ttf",
+        Path("/Library/Fonts/Arial Bold.ttf"),
+        Path("/System/Library/Fonts/Supplemental/Arial Bold.ttf"),
+    ]
+
+    regular_path = next((p for p in regular_candidates if p.exists()), None)
+    bold_path = next((p for p in bold_candidates if p.exists()), None)
+
+    if regular_path:
+        registerFont(TTFont("CertificateRegular", str(regular_path)))
+        FONT_REGULAR_NAME = "CertificateRegular"
+
+    if bold_path:
+        registerFont(TTFont("CertificateBold", str(bold_path)))
+        FONT_BOLD_NAME = "CertificateBold"
+
+    FONTS_REGISTERED = True
 
 
-def _text_height(draw, text, font):
-    bbox = draw.textbbox((0, 0), text, font=font)
-    return bbox[3] - bbox[1]
+def _fit_font_size(text: str, font_name: str, max_width: float, start_size: int, min_size: int = 18):
+    size = start_size
+    while size >= min_size:
+        if stringWidth(text, font_name, size) <= max_width:
+            return size
+        size -= 2
+    return min_size
 
 
-def _draw_centered_text(draw, text, y, image_width, font, fill, shadow_fill=None, shadow_offset=2):
-    bbox = draw.textbbox((0, 0), text, font=font)
-    text_width = bbox[2] - bbox[0]
-    x = (image_width - text_width) / 2
+def _draw_centered_text(c, text, y, page_width, font_name, font_size, fill_color, shadow_color=None, shadow_offset=1.5):
+    text_width = stringWidth(text, font_name, font_size)
+    x = (page_width - text_width) / 2
 
-    if shadow_fill:
-        draw.text((x + shadow_offset, y + shadow_offset), text, font=font, fill=shadow_fill)
+    if shadow_color:
+        c.setFillColor(shadow_color)
+        c.setFont(font_name, font_size)
+        c.drawString(x + shadow_offset, y - shadow_offset, text)
 
-    draw.text((x, y), text, font=font, fill=fill)
+    c.setFillColor(fill_color)
+    c.setFont(font_name, font_size)
+    c.drawString(x, y, text)
 
 
-def _wrap_text(draw, text, font, max_width):
+def _wrap_text(text: str, font_name: str, font_size: int, max_width: float):
     words = text.split()
+    if not words:
+        return []
+
     lines = []
-    current_line = ""
+    current = words[0]
 
-    for word in words:
-        test_line = f"{current_line} {word}".strip()
-        if _text_width(draw, test_line, font) <= max_width:
-            current_line = test_line
+    for word in words[1:]:
+        candidate = f"{current} {word}"
+        if stringWidth(candidate, font_name, font_size) <= max_width:
+            current = candidate
         else:
-            if current_line:
-                lines.append(current_line)
-            current_line = word
+            lines.append(current)
+            current = word
 
-    if current_line:
-        lines.append(current_line)
-
+    lines.append(current)
     return lines
 
 
 def _draw_centered_multiline_text(
-    draw,
+    c,
     text,
     y,
-    image_width,
-    font,
-    fill,
+    page_width,
+    font_name,
+    font_size,
+    fill_color,
     max_width,
-    line_spacing=16,
-    shadow_fill=None,
-    shadow_offset=2,
+    line_spacing=12,
+    shadow_color=None,
+    shadow_offset=1.5,
 ):
-    lines = _wrap_text(draw, text, font, max_width)
-    line_height = _text_height(draw, "Ag", font) + line_spacing
+    lines = _wrap_text(text, font_name, font_size, max_width)
+    if not lines:
+        return
 
-    for i, line in enumerate(lines):
+    current_y = y
+    for line in lines:
         _draw_centered_text(
-            draw=draw,
+            c=c,
             text=line,
-            y=y + (i * line_height),
-            image_width=image_width,
-            font=font,
-            fill=fill,
-            shadow_fill=shadow_fill,
+            y=current_y,
+            page_width=page_width,
+            font_name=font_name,
+            font_size=font_size,
+            fill_color=fill_color,
+            shadow_color=shadow_color,
             shadow_offset=shadow_offset,
         )
+        current_y -= (font_size + line_spacing)
 
 
 def generate_certificate_for_enrollment(enrollment):
@@ -122,6 +145,8 @@ def generate_certificate_for_enrollment(enrollment):
     if not template_path.exists():
         raise FileNotFoundError(f"Template certificat introuvable : {template_path}")
 
+    _register_custom_fonts()
+
     if existing:
         certificate = existing
         if not certificate.full_name:
@@ -135,122 +160,121 @@ def generate_certificate_for_enrollment(enrollment):
             full_name=full_name,
         )
 
-    image = Image.open(template_path).convert("RGB")
-    draw = ImageDraw.Draw(image)
+    buffer = BytesIO()
 
-    width, height = image.size
+    bg = ImageReader(str(template_path))
+    bg_width, bg_height = bg.getSize()
 
-    # Tailles retravaillées pour un vrai rendu certificat
-    header_font = _load_font(42, bold=True)
-    name_font = _load_font(100, bold=True)
-    subtitle_font = _load_font(36, bold=False)
-    title_font = _load_font(42, bold=True)
-    meta_font = _load_font(24, bold=False)
-    small_meta_font = _load_font(20, bold=False)
+    # PDF au format exact du template pour garder le rendu "plein cadre"
+    page_width = float(bg_width)
+    page_height = float(bg_height)
 
-    # Couleurs
-    white = "#F8FAFC"
-    soft_white = "#E2E8F0"
-    light_blue = "#DDEFFE"
-    muted = "#CBD5E1"
-    shadow = "#06111F"
+    c = canvas.Canvas(buffer, pagesize=(page_width, page_height))
+
+    # Fond pleine page
+    c.drawImage(bg, 0, 0, width=page_width, height=page_height, preserveAspectRatio=False, mask="auto")
+
+    shadow = HexColor("#06111F")
+    white_soft = HexColor("#F8FAFC")
+    white_light = HexColor("#E2E8F0")
+    white_muted = HexColor("#CBD5E1")
+    accent = HexColor("#F8FBFF")
+
+    # Tailles calibrées pour retrouver un rendu diplôme lisible
+    header_size = 24
+    subtitle_size = 22
+    course_size = 26
+    meta_size = 16
+    footer_size = 14
+
+    name_size = _fit_font_size(
+        text=full_name,
+        font_name=FONT_BOLD_NAME,
+        max_width=page_width * 0.62,
+        start_size=48,
+        min_size=26,
+    )
+
+    course_lines = _wrap_text(course.title, FONT_BOLD_NAME, course_size, page_width * 0.62)
+    course_block_height = len(course_lines) * (course_size + 8)
 
     # En-tête
     _draw_centered_text(
-        draw=draw,
-        text="CERTIFICAT DE RÉUSSITE",
-        y=int(height * 0.16),
-        image_width=width,
-        font=header_font,
-        fill=white,
-        shadow_fill=shadow,
-        shadow_offset=3,
+        c,
+        "CERTIFICAT DE RÉUSSITE",
+        page_height * 0.73,
+        page_width,
+        FONT_BOLD_NAME,
+        header_size,
+        white_soft,
+        shadow,
     )
 
     _draw_centered_text(
-        draw=draw,
-        text="Ce certificat est décerné à",
-        y=int(height * 0.25),
-        image_width=width,
-        font=subtitle_font,
-        fill=muted,
-        shadow_fill=shadow,
-        shadow_offset=2,
-    )
-
-    # Nom apprenant très visible
-    _draw_centered_text(
-        draw=draw,
-        text=full_name,
-        y=int(height * 0.34),
-        image_width=width,
-        font=name_font,
-        fill=light_blue,
-        shadow_fill=shadow,
-        shadow_offset=3,
+        c,
+        "Ce certificat est décerné à",
+        page_height * 0.64,
+        page_width,
+        FONT_REGULAR_NAME,
+        subtitle_size,
+        white_muted,
+        shadow,
     )
 
     _draw_centered_text(
-        draw=draw,
-        text="pour avoir validé avec succès la formation",
-        y=int(height * 0.48),
-        image_width=width,
-        font=subtitle_font,
-        fill=soft_white,
-        shadow_fill=shadow,
-        shadow_offset=2,
+        c,
+        full_name,
+        page_height * 0.56,
+        page_width,
+        FONT_BOLD_NAME,
+        name_size,
+        accent,
+        shadow,
     )
 
-    # Titre de la formation
+    _draw_centered_text(
+        c,
+        "pour avoir validé avec succès la formation",
+        page_height * 0.46,
+        page_width,
+        FONT_REGULAR_NAME,
+        subtitle_size,
+        white_light,
+        shadow,
+    )
+
     _draw_centered_multiline_text(
-        draw=draw,
-        text=course.title,
-        y=int(height * 0.56),
-        image_width=width,
-        font=title_font,
-        fill=white,
-        max_width=int(width * 0.72),
-        line_spacing=14,
-        shadow_fill=shadow,
-        shadow_offset=3,
+        c,
+        course.title,
+        page_height * 0.37,
+        page_width,
+        FONT_BOLD_NAME,
+        course_size,
+        white_soft,
+        page_width * 0.62,
+        line_spacing=8,
+        shadow_color=shadow,
     )
 
     issued_date = timezone.localtime(certificate.issued_at).strftime("%d/%m/%Y")
 
-    # Bas de certificat
-    draw.text(
-        (int(width * 0.10), int(height * 0.86)),
-        f"Date d'émission : {issued_date}",
-        font=meta_font,
-        fill=soft_white,
-    )
+    left_text = f"Date d’émission : {issued_date}"
+    right_text = f"Certificat n° : {certificate.certificate_number}"
 
-    cert_text = f"Certificat n° : {certificate.certificate_number}"
-    cert_text_width = _text_width(draw, cert_text, meta_font)
-    draw.text(
-        (width - int(width * 0.10) - cert_text_width, int(height * 0.86)),
-        cert_text,
-        font=meta_font,
-        fill=soft_white,
-    )
+    c.setFont(FONT_REGULAR_NAME, meta_size)
+    c.setFillColor(white_light)
+    c.drawString(page_width * 0.14, page_height * 0.11, left_text)
 
-    draw.text(
-        (int(width * 0.12), int(height * 0.905)),
-        "Power HSE",
-        font=small_meta_font,
-        fill=soft_white,
-    )
+    right_width = stringWidth(right_text, FONT_REGULAR_NAME, meta_size)
+    c.drawString(page_width - (page_width * 0.14) - right_width, page_height * 0.11, right_text)
 
-    draw.text(
-        (int(width * 0.12), int(height * 0.935)),
-        "Directeur de formation",
-        font=small_meta_font,
-        fill=muted,
-    )
+    c.setFont(FONT_REGULAR_NAME, footer_size)
+    c.setFillColor(white_light)
+    c.drawString(page_width * 0.16, page_height * 0.19, "Directeur de Formation")
 
-    # Export PDF plus net
-    buffer = BytesIO()
-    image.save(buffer, format="PDF", resolution=300.0)
+    c.showPage()
+    c.save()
+
     buffer.seek(0)
 
     filename = f"certificate_{course.slug}_{user.id}.pdf"
