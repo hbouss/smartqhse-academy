@@ -68,6 +68,12 @@ type AdaptReadyMessage = {
   type: "ADAPT_READY";
 };
 
+type ApiErrorResponse = {
+  error?: string;
+  detail?: string;
+  [key: string]: unknown;
+};
+
 function splitLongParagraph(line: string): string[] {
   const cleaned = line.replace(/\s+/g, " ").trim();
 
@@ -573,41 +579,52 @@ export default function PlayerCourseContent({ course }: { course: PlayerCourse }
   };
 
   const markCourseComplete = async () => {
-    try {
-      setCourseCompleteLoading(true);
+  try {
+    setCourseCompleteLoading(true);
 
-      if (!accessToken) {
-        throw new Error("Utilisateur non connecté");
-      }
-
-      const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-      const res = await fetch(`${baseUrl}/learning/courses/${course.slug}/complete/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
-
-      const data = await safeJsonResponse(res);
-
-      if (!res.ok) {
-        throw new Error(data?.error || "Impossible de terminer la formation");
-      }
-
-      setCourseStatus("completed");
-      await refreshCertificates();
-    } catch (error) {
-      console.error("Erreur markCourseComplete :", error);
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Erreur lors de la mise à jour du statut de formation."
-      );
-    } finally {
-      setCourseCompleteLoading(false);
+    if (!accessToken) {
+      throw new Error("Utilisateur non connecté");
     }
-  };
+
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+    const res = await fetch(`${baseUrl}/learning/courses/${course.slug}/complete/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    const rawText = await res.text();
+    let data: ApiErrorResponse | null = null;
+
+    try {
+      data = rawText ? (JSON.parse(rawText) as ApiErrorResponse) : null;
+    } catch {
+      console.error("Réponse non JSON :", rawText);
+      throw new Error("Le backend n'a pas renvoyé un JSON valide.");
+    }
+
+    console.log("Réponse backend markCourseComplete :", data);
+
+    if (!res.ok) {
+      console.error("Erreur backend markCourseComplete :", data);
+      throw new Error(data?.detail || data?.error || "Impossible de terminer la formation");
+    }
+
+    setCourseStatus("completed");
+    await refreshCertificates();
+  } catch (error) {
+    console.error("Erreur markCourseComplete :", error);
+    alert(
+      error instanceof Error
+        ? error.message
+        : "Erreur lors de la mise à jour du statut de formation."
+    );
+  } finally {
+    setCourseCompleteLoading(false);
+  }
+};
 
   const saveLastOpenedLesson = async (lessonId: number) => {
     try {
