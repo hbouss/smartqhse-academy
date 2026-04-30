@@ -1,3 +1,4 @@
+import logging
 import os
 
 from django.contrib.auth import get_user_model
@@ -18,6 +19,7 @@ from .serializers import (
     ChangePasswordSerializer,
 )
 
+logger = logging.getLogger(__name__)
 User = get_user_model()
 
 
@@ -58,12 +60,21 @@ class RegisterView(generics.CreateAPIView):
         </html>
         """
 
-        send_html_email(
-            subject=subject,
-            to_email=user.email,
-            text_content=text_content,
-            html_content=html_content,
-        )
+        try:
+            send_html_email(
+                subject=subject,
+                to_email=user.email,
+                text_content=text_content,
+                html_content=html_content,
+            )
+        except Exception as exc:
+            logger.exception(
+                "Erreur envoi email de bienvenue pour l'utilisateur %s (%s): %s",
+                user.id,
+                user.email,
+                exc,
+            )
+            # On n'empêche pas l'inscription si l'email échoue.
 
 
 class MeView(APIView):
@@ -138,12 +149,20 @@ class PasswordResetRequestView(APIView):
         </html>
         """
 
-        send_html_email(
-            subject=subject,
-            to_email=user.email,
-            text_content=text_content,
-            html_content=html_content,
-        )
+        try:
+            send_html_email(
+                subject=subject,
+                to_email=user.email,
+                text_content=text_content,
+                html_content=html_content,
+            )
+        except Exception as exc:
+            logger.exception(
+                "Erreur envoi email reset password pour %s (%s): %s",
+                user.id,
+                user.email,
+                exc,
+            )
 
         return Response(
             {"message": "Si un compte existe avec cet email, un lien a été envoyé."},
