@@ -1,3 +1,5 @@
+import traceback
+
 from django.shortcuts import get_object_or_404
 
 from rest_framework import status
@@ -155,7 +157,7 @@ def mark_lesson_complete(request, lesson_id):
         )
 
 
-@api_view(['POST'])
+@api_view(["POST"])
 @authentication_classes([JWTAuthentication, SessionAuthentication])
 @permission_classes([IsAuthenticated])
 def mark_course_complete(request, slug):
@@ -166,24 +168,40 @@ def mark_course_complete(request, slug):
         enrollment = CourseEnrollment.objects.get(
             user=user,
             course=course,
-            is_active=True
+            is_active=True,
         )
     except CourseEnrollment.DoesNotExist:
         return Response(
-            {"error": "Accès non autorisé"},
-            status=status.HTTP_403_FORBIDDEN
+            {"error": "Accès non autorisé à cette formation."},
+            status=status.HTTP_403_FORBIDDEN,
         )
 
-    enrollment.mark_completed()
+    try:
+        enrollment.mark_completed()
+        enrollment.refresh_from_db()
 
-    return Response(
-        {
-            "success": True,
-            "status": enrollment.status,
-            "completed_at": enrollment.completed_at.isoformat() if enrollment.completed_at else None,
-        },
-        status=status.HTTP_200_OK
-    )
+        certificate = getattr(enrollment, "certificate", None)
+
+        return Response(
+            {
+                "success": True,
+                "status": "completed",
+                "completed_at": enrollment.completed_at.isoformat() if enrollment.completed_at else None,
+                "certificate_file": certificate.file.url if certificate and certificate.file else None,
+                "certificate_number": certificate.certificate_number if certificate else None,
+            },
+            status=status.HTTP_200_OK,
+        )
+
+    except Exception as e:
+        traceback.print_exc()
+        return Response(
+            {
+                "error": "Erreur lors de la finalisation de la formation.",
+                "detail": str(e),
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        )
 
 
 @api_view(['POST'])

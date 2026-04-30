@@ -225,6 +225,17 @@ function MobileAccordionItem({
   );
 }
 
+async function safeJsonResponse(res: Response) {
+  const rawText = await res.text();
+
+  try {
+    return rawText ? JSON.parse(rawText) : null;
+  } catch {
+    console.error("Réponse non JSON :", rawText);
+    throw new Error("Le backend n'a pas renvoyé un JSON valide.");
+  }
+}
+
 export default function PlayerCourseContent({ course }: { course: PlayerCourse }) {
   const allLessons = useMemo(
     () => course.modules.flatMap((module) => module.lessons),
@@ -350,15 +361,16 @@ export default function PlayerCourseContent({ course }: { course: PlayerCourse }
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
+          cache: "no-store",
         });
 
-        const data = await res.json();
+        const data = await safeJsonResponse(res);
 
         if (!res.ok) {
-          throw new Error(data.error || "Impossible de charger les certificats");
+          throw new Error(data?.error || "Impossible de charger les certificats");
         }
 
-        setCertificates(data);
+        setCertificates(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error("Erreur chargement certificats :", error);
         setCertificates([]);
@@ -387,12 +399,13 @@ export default function PlayerCourseContent({ course }: { course: PlayerCourse }
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
+          cache: "no-store",
         });
 
-        const data = await res.json();
+        const data = await safeJsonResponse(res);
 
         if (!res.ok) {
-          throw new Error(data.error || "Impossible de charger la progression Adapt");
+          throw new Error(data?.error || "Impossible de charger la progression Adapt");
         }
 
         setAdaptProgress(data);
@@ -544,15 +557,16 @@ export default function PlayerCourseContent({ course }: { course: PlayerCourse }
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
+        cache: "no-store",
       });
 
-      const data = await res.json();
+      const data = await safeJsonResponse(res);
 
       if (!res.ok) {
-        throw new Error(data.error || "Impossible de recharger les certificats");
+        throw new Error(data?.error || "Impossible de recharger les certificats");
       }
 
-      setCertificates(data);
+      setCertificates(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error("Erreur refresh certificats :", error);
     }
@@ -575,17 +589,21 @@ export default function PlayerCourseContent({ course }: { course: PlayerCourse }
         },
       });
 
-      const data = await res.json();
+      const data = await safeJsonResponse(res);
 
       if (!res.ok) {
-        throw new Error(data.error || "Impossible de terminer la formation");
+        throw new Error(data?.error || "Impossible de terminer la formation");
       }
 
       setCourseStatus("completed");
       await refreshCertificates();
     } catch (error) {
-      console.error(error);
-      alert("Erreur lors de la mise à jour du statut de formation.");
+      console.error("Erreur markCourseComplete :", error);
+      alert(
+        error instanceof Error
+          ? error.message
+          : "Erreur lors de la mise à jour du statut de formation."
+      );
     } finally {
       setCourseCompleteLoading(false);
     }

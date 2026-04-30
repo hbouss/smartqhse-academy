@@ -28,7 +28,7 @@ const AuthContext = createContext<AuthContextType | null>(null);
 async function fetchWithTimeout(
   input: RequestInfo | URL,
   init?: RequestInit,
-  timeout = 6000
+  timeout = 8000
 ) {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeout);
@@ -37,6 +37,7 @@ async function fetchWithTimeout(
     return await fetch(input, {
       ...init,
       signal: controller.signal,
+      cache: "no-store",
     });
   } finally {
     clearTimeout(timeoutId);
@@ -48,7 +49,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [accessToken, setAccessTokenState] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchMe = async (token: string): Promise<User> => {
+  const fetchMe = async (token: string): Promise<User | null> => {
     const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
     if (!baseUrl) {
@@ -58,14 +59,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const res = await fetchWithTimeout(
       `${baseUrl}/accounts/me/`,
       {
+        method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
         },
       },
-      6000
+      8000
     );
 
+    if (res.status === 401 || res.status === 403) {
+      clearTokens();
+      setUser(null);
+      setAccessTokenState(null);
+      return null;
+    }
+
     if (!res.ok) {
+      const rawText = await res.text();
+      console.error("Erreur fetchMe - réponse backend :", rawText);
       throw new Error("Impossible de récupérer le profil utilisateur");
     }
 
@@ -85,13 +96,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
 
       const me = await fetchMe(token);
+
+      if (!me) {
+        return;
+      }
+
       setUser(me);
       setAccessTokenState(token);
-    } catch (error) {
-      console.error("Erreur refreshUser :", error);
-      clearTokens();
-      setUser(null);
-      setAccessTokenState(null);
+    } catch (error: any) {
+      if (error?.name === "AbortError") {
+        console.warn("refreshUser annulé");
+      } else {
+        console.error("Erreur refreshUser :", error);
+      }
+
+      // Très important :
+      // on NE vide PAS la session sur une erreur réseau/timeout/abort temporaire
     } finally {
       setLoading(false);
     }
@@ -102,9 +122,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     try {
       setTokens(access, refresh);
-      const me = await fetchMe(access);
-      setUser(me);
       setAccessTokenState(access);
+
+      const me = await fetchMe(access);
+
+      if (!me) {
+        throw new Error("Utilisateur non autorisé");
+      }
+
+      setUser(me);
     } catch (error) {
       console.error("Erreur login AuthProvider :", error);
       clearTokens();
@@ -124,6 +150,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   useEffect(() => {
+    const token = getAccessToken();
+
+    if (!token) {
+      setUser(null);
+      setAccessTokenState(null);
+      setLoading(false);
+      return;
+    }
+
+    setAccessTokenState(token);
     void refreshUser();
   }, []);
 
