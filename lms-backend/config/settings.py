@@ -132,6 +132,15 @@ if USE_R2_MEDIA:
     AWS_DEFAULT_ACL = None
     AWS_QUERYSTRING_AUTH = False
     AWS_S3_FILE_OVERWRITE = False
+    AWS_S3_ADDRESSING_STYLE = "path"
+
+    R2_PUBLIC_MEDIA_URL = os.getenv("R2_PUBLIC_MEDIA_URL", "").rstrip("/")
+    R2_PUBLIC_MEDIA_HOST = (
+        R2_PUBLIC_MEDIA_URL
+        .replace("https://", "")
+        .replace("http://", "")
+        .rstrip("/")
+    )
 
     STORAGES = {
         "default": {
@@ -139,6 +148,8 @@ if USE_R2_MEDIA:
             "OPTIONS": {
                 "bucket_name": AWS_STORAGE_BUCKET_NAME,
                 "endpoint_url": AWS_S3_ENDPOINT_URL,
+                "custom_domain": R2_PUBLIC_MEDIA_HOST,
+                "querystring_auth": False,
             },
         },
         "staticfiles": {
@@ -146,7 +157,7 @@ if USE_R2_MEDIA:
         },
     }
 
-    MEDIA_URL = os.getenv("R2_PUBLIC_MEDIA_URL", "").rstrip("/") + "/"
+    MEDIA_URL = f"{R2_PUBLIC_MEDIA_URL}/"
 
 else:
     MEDIA_URL = "/media/"
