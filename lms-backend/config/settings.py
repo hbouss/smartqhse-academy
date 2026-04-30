@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "corsheaders",
+    "storages",
     "accounts",
     "catalog",
     "learning",
@@ -119,16 +120,45 @@ STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-MEDIA_URL = "/media/"
+USE_R2_MEDIA = os.getenv("USE_R2_MEDIA", "False") == "True"
 
-RAILWAY_VOLUME_MOUNT_PATH = os.getenv("RAILWAY_VOLUME_MOUNT_PATH", "").strip()
+if USE_R2_MEDIA:
+    AWS_ACCESS_KEY_ID = os.getenv("R2_ACCESS_KEY_ID", "")
+    AWS_SECRET_ACCESS_KEY = os.getenv("R2_SECRET_ACCESS_KEY", "")
+    AWS_STORAGE_BUCKET_NAME = os.getenv("R2_BUCKET_NAME", "")
+    AWS_S3_ENDPOINT_URL = f"https://{os.getenv('R2_ACCOUNT_ID', '')}.r2.cloudflarestorage.com"
+    AWS_S3_REGION_NAME = "auto"
+    AWS_S3_SIGNATURE_VERSION = "s3v4"
+    AWS_DEFAULT_ACL = None
+    AWS_QUERYSTRING_AUTH = False
+    AWS_S3_FILE_OVERWRITE = False
 
-if RAILWAY_VOLUME_MOUNT_PATH and not DEBUG:
-    MEDIA_ROOT = Path(RAILWAY_VOLUME_MOUNT_PATH) / "media"
+    STORAGES = {
+        "default": {
+            "BACKEND": "storages.backends.s3.S3Storage",
+            "OPTIONS": {
+                "bucket_name": AWS_STORAGE_BUCKET_NAME,
+                "endpoint_url": AWS_S3_ENDPOINT_URL,
+            },
+        },
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
+
+    MEDIA_URL = os.getenv("R2_PUBLIC_MEDIA_URL", "").rstrip("/") + "/"
+
 else:
-    MEDIA_ROOT = BASE_DIR / "media"
+    MEDIA_URL = "/media/"
 
-MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
+    RAILWAY_VOLUME_MOUNT_PATH = os.getenv("RAILWAY_VOLUME_MOUNT_PATH", "").strip()
+
+    if RAILWAY_VOLUME_MOUNT_PATH and not DEBUG:
+        MEDIA_ROOT = Path(RAILWAY_VOLUME_MOUNT_PATH) / "media"
+    else:
+        MEDIA_ROOT = BASE_DIR / "media"
+
+    MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
 
 ADAPT_MODULES_ROOT = BASE_DIR / "adapt_modules"
 
