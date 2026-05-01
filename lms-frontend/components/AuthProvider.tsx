@@ -75,8 +75,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 
     if (!res.ok) {
-      const rawText = await res.text();
-      console.error("Erreur fetchMe - réponse backend :", rawText);
       throw new Error("Impossible de récupérer le profil utilisateur");
     }
 
@@ -103,15 +101,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       setUser(me);
       setAccessTokenState(token);
-    } catch (error: any) {
-      if (error?.name === "AbortError") {
-        console.warn("refreshUser annulé");
-      } else {
-        console.error("Erreur refreshUser :", error);
-      }
+    } catch (error) {
+      const err = error as Error;
 
-      // Très important :
-      // on NE vide PAS la session sur une erreur réseau/timeout/abort temporaire
+      if (err.name !== "AbortError") {
+        // On ne vide pas la session sur une erreur réseau temporaire.
+      }
     } finally {
       setLoading(false);
     }
@@ -132,7 +127,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       setUser(me);
     } catch (error) {
-      console.error("Erreur login AuthProvider :", error);
       clearTokens();
       setUser(null);
       setAccessTokenState(null);

@@ -22,10 +22,9 @@ ALLOWED_HOSTS = env_list(
 
 CORS_ALLOWED_ORIGINS = env_list(
     "CORS_ALLOWED_ORIGINS",
-    "http://localhost:3000,http://127.0.0.1:3000,http://192.168.1.15:3000,https://smartqhse-academy-54kqwr0no-sbeautyflix-projects.vercel.app,https://smartqhse-academy.vercel.app",
+    "http://localhost:3000,http://127.0.0.1:3000,http://192.168.1.15:3000",
 )
 
-# Compatibilité robuste selon version django-cors-headers
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.vercel\.app$",
 ]
@@ -35,7 +34,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = env_list(
     "CSRF_TRUSTED_ORIGINS",
-    "http://localhost:3000,http://127.0.0.1:3000,http://192.168.1.15:3000,https://smartqhse-academy-54kqwr0no-sbeautyflix-projects.vercel.app,https://smartqhse-academy.vercel.app,https://*.vercel.app",
+    "http://localhost:3000,http://127.0.0.1:3000,http://192.168.1.15:3000,https://*.vercel.app",
 )
 
 
@@ -89,7 +88,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-
 DATABASES = {
     "default": dj_database_url.parse(
         os.getenv("DATABASE_URL"),
@@ -99,7 +97,6 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = "accounts.User"
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -116,13 +113,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = "fr-fr"
 TIME_ZONE = "Europe/Paris"
 
 USE_I18N = True
 USE_TZ = True
-
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
@@ -181,16 +176,13 @@ else:
 
 ADAPT_MODULES_ROOT = BASE_DIR / "adapt_modules"
 
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
 }
-
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = os.getenv("EMAIL_HOST", "")
@@ -200,13 +192,11 @@ EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
 EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "True") == "True"
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", EMAIL_HOST_USER)
 
-
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 if not DEBUG:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_SSL_REDIRECT = False
-    SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = "SAMEORIGIN"

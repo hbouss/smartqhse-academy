@@ -64,11 +64,6 @@ def create_checkout_session(request, course_id):
 
         success_url, cancel_url = build_checkout_urls(course.slug)
 
-        print("DEBUG FRONTEND_URL:", os.getenv("FRONTEND_URL"))
-        print("DEBUG success_url:", success_url)
-        print("DEBUG cancel_url:", cancel_url)
-        print("DEBUG STRIPE KEY PRESENT:", bool(os.getenv("STRIPE_SECRET_KEY")))
-
         session = stripe.checkout.Session.create(
             mode="payment",
             payment_method_types=["card"],
@@ -110,12 +105,10 @@ def create_checkout_session(request, course_id):
             status=status.HTTP_404_NOT_FOUND,
         )
     except Exception as e:
-        print("ERREUR CHECKOUT COURSE:", repr(e))
         return Response(
             {
                 "error": "Impossible de lancer le paiement.",
                 "detail": str(e),
-                "debug": repr(e),
             },
             status=status.HTTP_400_BAD_REQUEST,
         )
@@ -158,11 +151,6 @@ def create_bundle_checkout_session(request, bundle_id):
 
         success_url, cancel_url = build_checkout_urls()
 
-        print("DEBUG FRONTEND_URL:", os.getenv("FRONTEND_URL"))
-        print("DEBUG success_url:", success_url)
-        print("DEBUG cancel_url:", cancel_url)
-        print("DEBUG STRIPE KEY PRESENT:", bool(os.getenv("STRIPE_SECRET_KEY")))
-
         session = stripe.checkout.Session.create(
             mode="payment",
             payment_method_types=["card"],
@@ -204,12 +192,10 @@ def create_bundle_checkout_session(request, bundle_id):
             status=status.HTTP_404_NOT_FOUND,
         )
     except Exception as e:
-        print("ERREUR CHECKOUT BUNDLE:", repr(e))
         return Response(
             {
                 "error": "Impossible de lancer le paiement.",
                 "detail": str(e),
-                "debug": repr(e),
             },
             status=status.HTTP_400_BAD_REQUEST,
         )
