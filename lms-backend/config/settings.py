@@ -15,20 +15,28 @@ def env_list(name, default=""):
 SECRET_KEY = os.getenv("SECRET_KEY", "unsafe-dev-key")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = [host.strip() for host in os.getenv(
+ALLOWED_HOSTS = env_list(
     "ALLOWED_HOSTS",
-    "127.0.0.1,localhost,0.0.0.0,192.168.1.15"
-).split(",") if host.strip()]
+    "127.0.0.1,localhost,0.0.0.0,192.168.1.15,smartqhse-academy-production.up.railway.app",
+)
 
-CORS_ALLOWED_ORIGINS = [origin.strip() for origin in os.getenv(
+CORS_ALLOWED_ORIGINS = env_list(
     "CORS_ALLOWED_ORIGINS",
-    "http://localhost:3000,http://127.0.0.1:3000,http://192.168.1.15:3000"
-).split(",") if origin.strip()]
+    "http://localhost:3000,http://127.0.0.1:3000,http://192.168.1.15:3000,https://smartqhse-academy-54kqwr0no-sbeautyflix-projects.vercel.app,https://smartqhse-academy.vercel.app",
+)
 
-CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in os.getenv(
+# Compatibilité robuste selon version django-cors-headers
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
+]
+CORS_ORIGIN_REGEX_WHITELIST = CORS_ALLOWED_ORIGIN_REGEXES
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = env_list(
     "CSRF_TRUSTED_ORIGINS",
-    "http://localhost:3000,http://127.0.0.1:3000,http://192.168.1.15:3000"
-).split(",") if origin.strip()]
+    "http://localhost:3000,http://127.0.0.1:3000,http://192.168.1.15:3000,https://smartqhse-academy-54kqwr0no-sbeautyflix-projects.vercel.app,https://smartqhse-academy.vercel.app,https://*.vercel.app",
+)
 
 
 INSTALLED_APPS = [
