@@ -16,11 +16,33 @@ from learning.models import CourseEnrollment
 from .models import Order
 from core.emails import send_html_email
 
-stripe.api_key = os.getenv('STRIPE_SECRET_KEY')
+stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 User = get_user_model()
 
 
-@api_view(['POST'])
+def normalize_base_url(url: str, label: str) -> str:
+    value = (url or "").strip().rstrip("/")
+    if not value:
+        raise ValueError(f"{label} est vide.")
+    if not value.startswith("http://") and not value.startswith("https://"):
+        raise ValueError(f"{label} doit commencer par http:// ou https://")
+    return value
+
+
+def build_checkout_urls(course_slug: str | None = None):
+    frontend_url = normalize_base_url(os.getenv("FRONTEND_URL"), "FRONTEND_URL")
+
+    success_url = f"{frontend_url}/checkout/success?session_id={{CHECKOUT_SESSION_ID}}"
+
+    if course_slug:
+        cancel_url = f"{frontend_url}/formations/{course_slug}"
+    else:
+        cancel_url = f"{frontend_url}/checkout/cancel"
+
+    return success_url, cancel_url
+
+
+@api_view(["POST"])
 @authentication_classes([JWTAuthentication, SessionAuthentication])
 @permission_classes([IsAuthenticated])
 def create_checkout_session(request, course_id):
@@ -31,38 +53,40 @@ def create_checkout_session(request, course_id):
         existing_enrollment = CourseEnrollment.objects.filter(
             user=user,
             course=course,
-            is_active=True
+            is_active=True,
         ).exists()
 
         if existing_enrollment:
             return Response(
-                {'error': 'Utilisateur déjà inscrit à cette formation.'},
-                status=status.HTTP_400_BAD_REQUEST
+                {"error": "Utilisateur déjà inscrit à cette formation."},
+                status=status.HTTP_400_BAD_REQUEST,
             )
 
+        success_url, cancel_url = build_checkout_urls(course.slug)
+
         session = stripe.checkout.Session.create(
-            mode='payment',
-            payment_method_types=['card'],
+            mode="payment",
+            payment_method_types=["card"],
             customer_email=user.email,
             line_items=[
                 {
-                    'price_data': {
-                        'currency': 'eur',
-                        'product_data': {
-                            'name': course.title,
+                    "price_data": {
+                        "currency": "eur",
+                        "product_data": {
+                            "name": course.title,
                         },
-                        'unit_amount': int(course.price_eur * 100),
+                        "unit_amount": int(course.price_eur * 100),
                     },
-                    'quantity': 1,
+                    "quantity": 1,
                 }
             ],
             metadata={
-                'user_id': str(user.id),
-                'course_id': str(course.id),
-                'order_type': 'course',
+                "user_id": str(user.id),
+                "course_id": str(course.id),
+                "order_type": "course",
             },
-            success_url=f"{os.getenv('FRONTEND_URL')}/checkout/success?session_id={{CHECKOUT_SESSION_ID}}",
-            cancel_url=f"{os.getenv('FRONTEND_URL')}/checkout/cancel",
+            success_url=success_url,
+            cancel_url=cancel_url,
         )
 
         Order.objects.create(
@@ -70,21 +94,27 @@ def create_checkout_session(request, course_id):
             course=course,
             stripe_session_id=session.id,
             amount_eur=course.price_eur,
-            status='pending',
+            status="pending",
         )
 
-        return Response({'checkout_url': session.url}, status=status.HTTP_200_OK)
+        return Response({"checkout_url": session.url}, status=status.HTTP_200_OK)
 
     except Course.DoesNotExist:
         return Response(
-            {'error': 'Formation introuvable.'},
-            status=status.HTTP_404_NOT_FOUND
+            {"error": "Formation introuvable."},
+            status=status.HTTP_404_NOT_FOUND,
         )
     except Exception as e:
-        return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(
+            {
+                "error": "Impossible de lancer le paiement.",
+                "detail": str(e),
+            },
+            status=status.HTTP_400_BAD_REQUEST,
+        )
 
 
-@api_view(['POST'])
+@api_view(["POST"])
 @authentication_classes([JWTAuthentication, SessionAuthentication])
 @permission_classes([IsAuthenticated])
 def create_bundle_checkout_session(request, bundle_id):
@@ -92,22 +122,22 @@ def create_bundle_checkout_session(request, bundle_id):
         user = request.user
         bundle = ProductBundle.objects.prefetch_related("courses").get(
             id=bundle_id,
-            is_published=True
+            is_published=True,
         )
 
         included_courses = list(bundle.courses.all())
 
         if not included_courses:
             return Response(
-                {'error': 'Ce pack ne contient aucune formation.'},
-                status=status.HTTP_400_BAD_REQUEST
+                {"error": "Ce pack ne contient aucune formation."},
+                status=status.HTTP_400_BAD_REQUEST,
             )
 
         owned_course_ids = set(
             CourseEnrollment.objects.filter(
                 user=user,
                 is_active=True,
-                course__in=included_courses
+                course__in=included_courses,
             ).values_list("course_id", flat=True)
         )
 
@@ -115,33 +145,35 @@ def create_bundle_checkout_session(request, bundle_id):
 
         if included_course_ids.issubset(owned_course_ids):
             return Response(
-                {'error': 'Utilisateur déjà inscrit à toutes les formations de ce pack.'},
-                status=status.HTTP_400_BAD_REQUEST
+                {"error": "Utilisateur déjà inscrit à toutes les formations de ce pack."},
+                status=status.HTTP_400_BAD_REQUEST,
             )
 
+        success_url, cancel_url = build_checkout_urls()
+
         session = stripe.checkout.Session.create(
-            mode='payment',
-            payment_method_types=['card'],
+            mode="payment",
+            payment_method_types=["card"],
             customer_email=user.email,
             line_items=[
                 {
-                    'price_data': {
-                        'currency': 'eur',
-                        'product_data': {
-                            'name': bundle.title,
+                    "price_data": {
+                        "currency": "eur",
+                        "product_data": {
+                            "name": bundle.title,
                         },
-                        'unit_amount': int(bundle.price_eur * 100),
+                        "unit_amount": int(bundle.price_eur * 100),
                     },
-                    'quantity': 1,
+                    "quantity": 1,
                 }
             ],
             metadata={
-                'user_id': str(user.id),
-                'bundle_id': str(bundle.id),
-                'order_type': 'bundle',
+                "user_id": str(user.id),
+                "bundle_id": str(bundle.id),
+                "order_type": "bundle",
             },
-            success_url=f"{os.getenv('FRONTEND_URL')}/checkout/success?session_id={{CHECKOUT_SESSION_ID}}",
-            cancel_url=f"{os.getenv('FRONTEND_URL')}/checkout/cancel",
+            success_url=success_url,
+            cancel_url=cancel_url,
         )
 
         Order.objects.create(
@@ -149,26 +181,32 @@ def create_bundle_checkout_session(request, bundle_id):
             bundle=bundle,
             stripe_session_id=session.id,
             amount_eur=bundle.price_eur,
-            status='pending',
+            status="pending",
         )
 
-        return Response({'checkout_url': session.url}, status=status.HTTP_200_OK)
+        return Response({"checkout_url": session.url}, status=status.HTTP_200_OK)
 
     except ProductBundle.DoesNotExist:
         return Response(
-            {'error': 'Pack introuvable.'},
-            status=status.HTTP_404_NOT_FOUND
+            {"error": "Pack introuvable."},
+            status=status.HTTP_404_NOT_FOUND,
         )
     except Exception as e:
-        return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(
+            {
+                "error": "Impossible de lancer le paiement.",
+                "detail": str(e),
+            },
+            status=status.HTTP_400_BAD_REQUEST,
+        )
 
 
-@api_view(['POST'])
+@api_view(["POST"])
 @permission_classes([AllowAny])
 def stripe_webhook(request):
     payload = request.body
-    sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
-    endpoint_secret = os.getenv('STRIPE_WEBHOOK_SECRET')
+    sig_header = request.META.get("HTTP_STRIPE_SIGNATURE")
+    endpoint_secret = os.getenv("STRIPE_WEBHOOK_SECRET")
 
     try:
         event = stripe.Webhook.construct_event(
@@ -247,12 +285,15 @@ def stripe_webhook(request):
                     </html>
                     """
 
-                    send_html_email(
-                        subject=subject,
-                        to_email=user.email,
-                        text_content=text_content,
-                        html_content=html_content,
-                    )
+                    try:
+                        send_html_email(
+                            subject=subject,
+                            to_email=user.email,
+                            text_content=text_content,
+                            html_content=html_content,
+                        )
+                    except Exception:
+                        pass
 
             elif course_id:
                 course = Course.objects.get(id=course_id)
@@ -293,12 +334,15 @@ def stripe_webhook(request):
                     </html>
                     """
 
-                    send_html_email(
-                        subject=subject,
-                        to_email=user.email,
-                        text_content=text_content,
-                        html_content=html_content,
-                    )
+                    try:
+                        send_html_email(
+                            subject=subject,
+                            to_email=user.email,
+                            text_content=text_content,
+                            html_content=html_content,
+                        )
+                    except Exception:
+                        pass
 
         except Order.DoesNotExist:
             return HttpResponse(status=404)
@@ -312,7 +356,7 @@ def stripe_webhook(request):
     return HttpResponse(status=200)
 
 
-@api_view(['GET'])
+@api_view(["GET"])
 @authentication_classes([JWTAuthentication, SessionAuthentication])
 @permission_classes([IsAuthenticated])
 def my_orders(request):
@@ -320,8 +364,8 @@ def my_orders(request):
 
     orders = (
         Order.objects.filter(user=user)
-        .select_related('course', 'bundle')
-        .order_by('-created_at')
+        .select_related("course", "bundle")
+        .order_by("-created_at")
     )
 
     data = [
