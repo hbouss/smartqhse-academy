@@ -68,6 +68,7 @@ def create_checkout_session(request, course_id):
             mode="payment",
             payment_method_types=["card"],
             customer_email=user.email,
+            allow_promotion_codes=True,
             line_items=[
                 {
                     "price_data": {
@@ -155,6 +156,7 @@ def create_bundle_checkout_session(request, bundle_id):
             mode="payment",
             payment_method_types=["card"],
             customer_email=user.email,
+            allow_promotion_codes=True,
             line_items=[
                 {
                     "price_data": {
