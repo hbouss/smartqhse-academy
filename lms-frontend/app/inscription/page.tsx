@@ -18,12 +18,14 @@ function InscriptionContent() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [loadingStep, setLoadingStep] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError("");
     setLoading(true);
+    setLoadingStep("Création de votre compte...");
 
     try {
       const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -58,6 +60,8 @@ function InscriptionContent() {
         throw new Error(message);
       }
 
+      setLoadingStep("Connexion automatique à votre espace...");
+
       const loginRes = await fetch(`${baseUrl}/accounts/login/`, {
         method: "POST",
         headers: {
@@ -76,6 +80,8 @@ function InscriptionContent() {
         return;
       }
 
+      setLoadingStep("Redirection vers votre achat...");
+
       await login(loginData.access, loginData.refresh);
       router.push(returnTo);
     } catch (err) {
@@ -84,13 +90,37 @@ function InscriptionContent() {
       } else {
         setError("Inscription impossible.");
       }
-    } finally {
       setLoading(false);
+      setLoadingStep("");
     }
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-20 text-white">
+    <main className="relative min-h-screen bg-slate-950 px-6 py-20 text-white">
+      {loading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 px-6 backdrop-blur-sm">
+          <div className="w-full max-w-sm rounded-3xl border border-cyan-500/20 bg-slate-900 p-8 text-center shadow-2xl shadow-cyan-950/40">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-cyan-500/30 bg-cyan-500/10 text-3xl">
+              ⏳
+            </div>
+
+            <h2 className="mb-2 text-2xl font-bold text-white">Veuillez patienter</h2>
+
+            <p className="text-sm leading-7 text-slate-300">
+              {loadingStep || "Traitement en cours..."}
+            </p>
+
+            <div className="mt-6 h-2 overflow-hidden rounded-full bg-slate-800">
+              <div className="h-full w-1/2 animate-pulse rounded-full bg-cyan-500" />
+            </div>
+
+            <p className="mt-4 text-xs leading-6 text-slate-400">
+              Ne fermez pas cette page. Vous allez être redirigé automatiquement.
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-start">
         <div className="rounded-3xl border border-cyan-500/20 bg-slate-900 p-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
@@ -114,7 +144,8 @@ function InscriptionContent() {
               placeholder="Prénom"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none"
+              disabled={loading}
+              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none disabled:opacity-60"
               required
             />
 
@@ -123,7 +154,8 @@ function InscriptionContent() {
               placeholder="Nom"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none"
+              disabled={loading}
+              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none disabled:opacity-60"
               required
             />
 
@@ -132,7 +164,8 @@ function InscriptionContent() {
               placeholder="Adresse email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none"
+              disabled={loading}
+              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none disabled:opacity-60"
               required
             />
 
@@ -141,7 +174,8 @@ function InscriptionContent() {
               placeholder="Nom d’utilisateur"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none"
+              disabled={loading}
+              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none disabled:opacity-60"
               required
             />
 
@@ -150,7 +184,8 @@ function InscriptionContent() {
               placeholder="Mot de passe"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none"
+              disabled={loading}
+              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none disabled:opacity-60"
               required
             />
 
@@ -159,9 +194,9 @@ function InscriptionContent() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-full bg-cyan-500 px-5 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400 disabled:opacity-60"
+              className="w-full rounded-full bg-cyan-500 px-5 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {loading ? "Création du compte..." : "Créer mon compte"}
+              {loading ? "Veuillez patienter..." : "Créer mon compte"}
             </button>
           </form>
 

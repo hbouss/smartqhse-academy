@@ -327,7 +327,7 @@ export default function HomeDashboard() {
                   </div>
 
                   <span className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950">
-                    Voir le programme
+                    Accéder à la formation
                   </span>
                 </div>
               </div>
@@ -421,7 +421,7 @@ export default function HomeDashboard() {
                   </div>
 
                   <span className="rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-slate-950">
-                    Voir le pack
+                    Accéder au pack
                   </span>
                 </div>
               </div>
