@@ -48,6 +48,8 @@ type Bundle = {
   }[];
 };
 
+const PROMO_CODE = "ACADEMY10";
+
 async function fetchWithTimeout(input: RequestInfo | URL, init?: RequestInit, timeout = 8000) {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeout);
@@ -67,6 +69,12 @@ function truncateText(text: string, maxLength = 120) {
   if (!text) return "";
   if (text.length <= maxLength) return text;
   return `${text.slice(0, maxLength).trim()}…`;
+}
+
+function getPromoPrice(price: string) {
+  const amount = Number(price);
+  if (!amount || amount <= 0) return null;
+  return (amount * 0.9).toFixed(2);
 }
 
 export default function HomeDashboard() {
@@ -234,72 +242,98 @@ export default function HomeDashboard() {
 
     return (
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {courses.map((course) => (
-          <Link
-            key={course.id}
-            href={`/formations/${course.slug}`}
-            className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-slate-900 shadow-lg shadow-cyan-950/20 transition hover:-translate-y-1 hover:border-cyan-400/40"
-          >
-            <div className="aspect-[16/9] w-full bg-slate-800">
-              {course.thumbnail_url ? (
-                <img
-                  src={course.thumbnail_url}
-                  alt={course.title}
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <div className="flex h-full items-center justify-center text-sm text-slate-400">
-                  Visuel à venir
-                </div>
-              )}
-            </div>
+        {courses.map((course) => {
+          const promoPrice = getPromoPrice(course.price_eur);
 
-            <div className="p-6">
-              <div className="mb-3 flex flex-wrap gap-2">
-                <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-300">
-                  {course.category}
-                </span>
-
-                <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-semibold text-slate-200">
-                  {course.level}
-                </span>
-
-                {course.is_featured && (
-                  <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-300">
-                    Mise en avant
-                  </span>
+          return (
+            <Link
+              key={course.id}
+              href={`/formations/${course.slug}`}
+              className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-slate-900 shadow-lg shadow-cyan-950/20 transition hover:-translate-y-1 hover:border-cyan-400/40"
+            >
+              <div className="aspect-[16/9] w-full bg-slate-800">
+                {course.thumbnail_url ? (
+                  <img
+                    src={course.thumbnail_url}
+                    alt={course.title}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center text-sm text-slate-400">
+                    Visuel à venir
+                  </div>
                 )}
               </div>
 
-              <h2 className="mb-3 text-2xl font-semibold text-white">
-                {course.title}
-              </h2>
+              <div className="p-6">
+                <div className="mb-3 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-300">
+                    {course.category}
+                  </span>
 
-              <p className="mb-4 text-sm leading-7 text-slate-300 sm:hidden">
-                {truncateText(course.short_description || "Description à compléter.", 110)}
-              </p>
+                  <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-semibold text-slate-200">
+                    {course.level}
+                  </span>
 
-              <p className="mb-4 hidden text-sm leading-7 text-slate-300 sm:block">
-                {course.short_description || "Description à compléter."}
-              </p>
+                  {course.is_featured && (
+                    <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-300">
+                      Recommandée
+                    </span>
+                  )}
+                </div>
 
-              <div className="mb-5 flex flex-wrap gap-4 text-sm text-slate-400">
-                <span>{course.estimated_duration_hours} h</span>
-                <span>{course.instructor}</span>
+                <h2 className="mb-3 text-2xl font-semibold text-white">
+                  {course.title}
+                </h2>
+
+                <p className="mb-4 text-sm leading-7 text-slate-300 sm:hidden">
+                  {truncateText(course.short_description || "Description à compléter.", 110)}
+                </p>
+
+                <p className="mb-4 hidden text-sm leading-7 text-slate-300 sm:block">
+                  {course.short_description || "Description à compléter."}
+                </p>
+
+                <div className="mb-5 flex flex-wrap gap-4 text-sm text-slate-400">
+                  <span>{course.estimated_duration_hours} h</span>
+                  <span>{course.instructor}</span>
+                </div>
+
+                <div className="mb-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-3 text-sm text-emerald-200">
+                  Accès immédiat · Formation en ligne · Certificat inclus
+                </div>
+
+                {course.price_eur !== "0.00" && (
+                  <div className="mb-4 rounded-2xl border border-amber-500/20 bg-amber-500/10 p-3 text-sm text-amber-200">
+                    Offre de lancement : -10 % avec le code{" "}
+                    <span className="font-bold text-white">{PROMO_CODE}</span>
+                  </div>
+                )}
+
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    {course.price_eur === "0.00" ? (
+                      <span className="text-lg font-bold text-white">Gratuit</span>
+                    ) : (
+                      <>
+                        <div className="text-sm text-slate-400 line-through">
+                          {course.price_eur} €
+                        </div>
+                        <div className="text-lg font-bold text-white">
+                          {promoPrice} € avec code promo
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  <span className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950">
+                    Voir le programme
+                  </span>
+                </div>
               </div>
-
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-lg font-bold text-white">
-                  {course.price_eur === "0.00" ? "Gratuit" : `${course.price_eur} €`}
-                </span>
-
-                <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-sm font-medium text-cyan-300">
-                  Voir la formation
-                </span>
-              </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </div>
     );
   };
@@ -315,67 +349,85 @@ export default function HomeDashboard() {
 
     return (
       <div className="grid gap-6 md:grid-cols-2">
-        {bundles.map((bundle) => (
-          <Link
-            key={bundle.id}
-            href={`/packs/${bundle.slug}`}
-            className="overflow-hidden rounded-2xl border border-amber-500/20 bg-slate-900 shadow-lg shadow-cyan-950/20 transition hover:-translate-y-1 hover:border-amber-400/40"
-          >
-            <div className="aspect-[16/9] w-full bg-slate-800">
-              {bundle.thumbnail_url ? (
-                <img
-                  src={bundle.thumbnail_url}
-                  alt={bundle.title}
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <div className="flex h-full items-center justify-center text-sm text-slate-400">
-                  Visuel pack à venir
-                </div>
-              )}
-            </div>
+        {bundles.map((bundle) => {
+          const promoPrice = getPromoPrice(bundle.price_eur);
 
-            <div className="p-6">
-              <div className="mb-3 flex flex-wrap gap-2">
-                <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-300">
-                  Pack recommandé
-                </span>
-
-                {bundle.is_featured && (
-                  <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-300">
-                    Mise en avant
-                  </span>
+          return (
+            <Link
+              key={bundle.id}
+              href={`/packs/${bundle.slug}`}
+              className="overflow-hidden rounded-2xl border border-amber-500/20 bg-slate-900 shadow-lg shadow-cyan-950/20 transition hover:-translate-y-1 hover:border-amber-400/40"
+            >
+              <div className="aspect-[16/9] w-full bg-slate-800">
+                {bundle.thumbnail_url ? (
+                  <img
+                    src={bundle.thumbnail_url}
+                    alt={bundle.title}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center text-sm text-slate-400">
+                    Visuel pack à venir
+                  </div>
                 )}
               </div>
 
-              <h2 className="mb-3 text-2xl font-semibold text-white">
-                {bundle.title}
-              </h2>
+              <div className="p-6">
+                <div className="mb-3 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-300">
+                    Pack recommandé
+                  </span>
 
-              <p className="mb-4 text-sm leading-7 text-slate-300 sm:hidden">
-                {truncateText(bundle.short_description || "Pack à découvrir.", 110)}
-              </p>
+                  {bundle.is_featured && (
+                    <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-300">
+                      Mise en avant
+                    </span>
+                  )}
+                </div>
 
-              <p className="mb-4 hidden text-sm leading-7 text-slate-300 sm:block">
-                {bundle.short_description || "Pack à découvrir."}
-              </p>
+                <h2 className="mb-3 text-2xl font-semibold text-white">
+                  {bundle.title}
+                </h2>
 
-              <div className="mb-5 text-sm text-slate-400">
-                {formatBundleCourses(bundle)}
+                <p className="mb-4 text-sm leading-7 text-slate-300 sm:hidden">
+                  {truncateText(bundle.short_description || "Pack à découvrir.", 110)}
+                </p>
+
+                <p className="mb-4 hidden text-sm leading-7 text-slate-300 sm:block">
+                  {bundle.short_description || "Pack à découvrir."}
+                </p>
+
+                <div className="mb-5 text-sm text-slate-400">
+                  {formatBundleCourses(bundle)}
+                </div>
+
+                <div className="mb-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-3 text-sm text-emerald-200">
+                  Accès immédiat · Plusieurs formations incluses · Idéal pour progresser vite
+                </div>
+
+                <div className="mb-4 rounded-2xl border border-amber-500/20 bg-amber-500/10 p-3 text-sm text-amber-200">
+                  Offre de lancement : -10 % avec le code{" "}
+                  <span className="font-bold text-white">{PROMO_CODE}</span>
+                </div>
+
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-sm text-slate-400 line-through">
+                      {bundle.price_eur} €
+                    </div>
+                    <div className="text-lg font-bold text-white">
+                      {promoPrice} € avec code promo
+                    </div>
+                  </div>
+
+                  <span className="rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-slate-950">
+                    Voir le pack
+                  </span>
+                </div>
               </div>
-
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-lg font-bold text-white">
-                  {bundle.price_eur} €
-                </span>
-
-                <span className="rounded-full bg-amber-500/10 px-3 py-1 text-sm font-medium text-amber-300">
-                  Voir le pack
-                </span>
-              </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </div>
     );
   };
@@ -401,45 +453,90 @@ export default function HomeDashboard() {
   if (!user) {
     return (
       <main className="min-h-screen bg-slate-950 text-white">
-        <section className="mx-auto max-w-7xl px-6 py-16">
-          <div className="mb-12 max-w-3xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
-              SmartQHSE Academy
-            </p>
+        <section className="mx-auto max-w-7xl px-5 py-10 md:px-6 md:py-16">
+          <div className="mb-10 grid gap-6 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+            <div>
+              <div className="mb-6 inline-flex rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-200">
+                Offre de lancement : -10 % avec le code {PROMO_CODE}
+              </div>
 
-            <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
-              Plateforme premium de formation QHSE, IA et automatisation
-            </h1>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
+                SmartQHSE Academy
+              </p>
 
-            <p className="text-lg text-slate-300">
-              La plateforme premium pour se former au QHSE, à l’intelligence artificielle
-              et à l’automatisation des audits, actions et processus de pilotage.
-            </p>
+              <h1 className="mb-5 text-4xl font-bold tracking-tight md:text-6xl">
+                Apprenez à utiliser l’IA et l’automatisation pour gagner du temps en QHSE.
+              </h1>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/connexion"
-                className="rounded-full bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
-              >
-                Se connecter
-              </Link>
+              <p className="max-w-3xl text-lg leading-8 text-slate-300">
+                Des formations concrètes pour automatiser vos audits, vos actions,
+                vos indicateurs et vos processus QHSE avec des outils accessibles :
+                IA, Forms, Excel, Power BI, Notion, Make et Power Automate.
+              </p>
 
-              <Link
-                href="/inscription"
-                className="rounded-full border border-cyan-500/30 px-5 py-3 text-sm font-semibold text-cyan-300 transition hover:border-cyan-400 hover:text-cyan-200"
-              >
-                Créer un compte
-              </Link>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="#formations"
+                  className="rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+                >
+                  Voir les formations
+                </Link>
+
+                <Link
+                  href="/inscription"
+                  className="rounded-full border border-cyan-500/30 px-6 py-3 text-sm font-semibold text-cyan-300 transition hover:border-cyan-400 hover:text-cyan-200"
+                >
+                  Créer mon compte
+                </Link>
+              </div>
+
+              <p className="mt-5 text-sm text-slate-400">
+                Accès immédiat après achat. Paiement sécurisé. Formation disponible en ligne 24/7.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-cyan-500/20 bg-slate-900/80 p-4 shadow-xl shadow-cyan-950/30 sm:p-5">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">
+                Ce que vous obtenez
+              </p>
+
+              <div className="grid grid-cols-2 gap-2">
+                <div className="rounded-xl border border-slate-700 bg-slate-950/60 p-3">
+                  <p className="text-lg">⚡</p>
+                  <p className="mt-1 text-xs font-semibold text-white">Accès immédiat</p>
+                </div>
+
+                <div className="rounded-xl border border-slate-700 bg-slate-950/60 p-3">
+                  <p className="text-lg">🧩</p>
+                  <p className="mt-1 text-xs font-semibold text-white">E-learning</p>
+                </div>
+
+                <div className="rounded-xl border border-slate-700 bg-slate-950/60 p-3">
+                  <p className="text-lg">🎓</p>
+                  <p className="mt-1 text-xs font-semibold text-white">Certificat</p>
+                </div>
+
+                <div className="rounded-xl border border-slate-700 bg-slate-950/60 p-3">
+                  <p className="text-lg">🛠️</p>
+                  <p className="mt-1 text-xs font-semibold text-white">Cas pratiques</p>
+                </div>
+              </div>
+
+              <div className="mt-2 rounded-xl border border-cyan-500/20 bg-cyan-500/10 px-3 py-2">
+                <p className="text-xs font-medium leading-5 text-cyan-100">
+                  🚀 Méthodes applicables immédiatement en QHSE
+                </p>
+              </div>
             </div>
           </div>
 
           {pageError && (
             <div className="mb-8 rounded-2xl border border-amber-500/20 bg-slate-900 p-6 text-amber-300">
-              Certaines données nont pas pu être chargées, mais le catalogue reste accessible.
+              Certaines données n&apos;ont pas pu être chargées, mais le catalogue reste accessible.
             </div>
           )}
 
-          <div className="mb-16">
+          <div id="formations" className="mb-16">
             <div className="mb-6">
               <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
                 Socle & fondamentaux
@@ -497,7 +594,7 @@ export default function HomeDashboard() {
 
         {pageError && (
           <div className="mb-8 rounded-2xl border border-amber-500/20 bg-slate-900 p-6 text-amber-300">
-            Certaines données secondaires ont pas pu être chargées.
+            Certaines données secondaires n&apos;ont pas pu être chargées.
           </div>
         )}
 
@@ -570,14 +667,14 @@ export default function HomeDashboard() {
           </Link>
 
           <Link
-            href="/"
+            href="#formations"
             className="rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-white transition hover:border-slate-500"
           >
             Explorer le catalogue
           </Link>
         </div>
 
-        <div className="mb-16">
+        <div id="formations" className="mb-16">
           <div className="mb-6">
             <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
               Socle & fondamentaux

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/components/AuthProvider";
 
 type BundleBuyButtonProps = {
@@ -14,10 +14,13 @@ export default function BundleBuyButton({ bundleId }: BundleBuyButtonProps) {
   const [legalAccepted, setLegalAccepted] = useState(false);
   const { user, accessToken } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleCheckout = async () => {
     if (!user || !accessToken) {
-      router.push("/connexion");
+      router.push(
+        `/inscription?returnTo=${encodeURIComponent(`${pathname}?checkout=1#achat`)}`
+      );
       return;
     }
 
@@ -43,6 +46,7 @@ export default function BundleBuyButton({ bundleId }: BundleBuyButtonProps) {
           user_id: user.id,
           legal_acknowledged: true,
           immediate_access_requested: true,
+          promo_code: "ACADEMY10",
         }),
       });
 
@@ -65,6 +69,17 @@ export default function BundleBuyButton({ bundleId }: BundleBuyButtonProps) {
 
   return (
     <div className="space-y-4">
+      {!user && (
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-500/10 p-4 text-sm leading-7 text-amber-100">
+          Créez votre compte gratuitement pour acheter le pack et débloquer vos formations.
+        </div>
+      )}
+
+      <div className="rounded-2xl border border-amber-500/20 bg-amber-500/10 p-4 text-sm leading-7 text-amber-100">
+        Offre de lancement : utilisez le code{" "}
+        <span className="font-bold text-white">ACADEMY10</span> pour obtenir -10 %.
+      </div>
+
       <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm leading-7 text-slate-300">
         <label className="flex items-start gap-3">
           <input
@@ -81,18 +96,12 @@ export default function BundleBuyButton({ bundleId }: BundleBuyButtonProps) {
         </label>
 
         <p className="mt-3 text-xs leading-6 text-slate-400">
-          En poursuivant, vous acceptez également nos{" "}
-          <Link
-            href="/conditions-generales-de-vente"
-            className="text-cyan-400 hover:text-cyan-300"
-          >
+          En poursuivant, vous acceptez nos{" "}
+          <Link href="/conditions-generales-de-vente" className="text-cyan-400 hover:text-cyan-300">
             Conditions générales de vente
           </Link>{" "}
           et notre{" "}
-          <Link
-            href="/politique-de-confidentialite"
-            className="text-cyan-400 hover:text-cyan-300"
-          >
+          <Link href="/politique-de-confidentialite" className="text-cyan-400 hover:text-cyan-300">
             Politique de confidentialité
           </Link>.
         </p>
@@ -101,10 +110,18 @@ export default function BundleBuyButton({ bundleId }: BundleBuyButtonProps) {
       <button
         onClick={handleCheckout}
         disabled={loading || !legalAccepted}
-        className="rounded-full bg-amber-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full bg-amber-500 px-6 py-4 text-base font-bold text-slate-950 transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {loading ? "Redirection..." : "Acheter le pack"}
+        {loading
+          ? "Redirection vers le paiement..."
+          : user
+          ? "Acheter le pack maintenant"
+          : "Créer mon compte et acheter le pack"}
       </button>
+
+      <p className="text-center text-xs text-slate-400">
+        Paiement sécurisé par Stripe. Accès automatique après validation du paiement.
+      </p>
     </div>
   );
 }

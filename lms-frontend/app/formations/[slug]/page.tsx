@@ -33,6 +33,8 @@ type CourseDetail = {
   modules: Module[];
 };
 
+const PROMO_CODE = "ACADEMY10";
+
 async function getCourse(slug: string): Promise<CourseDetail> {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -47,6 +49,12 @@ async function getCourse(slug: string): Promise<CourseDetail> {
   return res.json();
 }
 
+function getPromoPrice(price: string) {
+  const amount = Number(price);
+  if (!amount || amount <= 0) return null;
+  return (amount * 0.9).toFixed(2);
+}
+
 function splitLongParagraph(line: string): string[] {
   const cleaned = line.replace(/\s+/g, " ").trim();
 
@@ -54,9 +62,10 @@ function splitLongParagraph(line: string): string[] {
     return [cleaned];
   }
 
-  const sentences = cleaned.match(/[^.!?]+[.!?]?/g)?.map((s) => s.trim()).filter(Boolean) ?? [
-    cleaned,
-  ];
+  const sentences =
+    cleaned.match(/[^.!?]+[.!?]?/g)?.map((s) => s.trim()).filter(Boolean) ?? [
+      cleaned,
+    ];
 
   const chunks: string[] = [];
   let current = "";
@@ -170,18 +179,20 @@ export default async function CourseDetailPage({
   const fullDescription =
     course.description || course.short_description || "Description à compléter.";
 
+  const promoPrice = getPromoPrice(course.price_eur);
+
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      <section className="mx-auto max-w-6xl px-4 py-8 md:px-6 md:py-16">
+      <section className="mx-auto max-w-6xl px-4 py-6 md:px-6 md:py-16">
         <Link
           href="/"
-          className="mb-6 inline-flex text-sm font-medium text-cyan-400 transition hover:text-cyan-300"
+          className="mb-5 inline-flex text-sm font-medium text-cyan-400 transition hover:text-cyan-300"
         >
           ← Retour au catalogue
         </Link>
 
-        <div className="mb-8 overflow-hidden rounded-3xl border border-cyan-500/20 bg-slate-900">
-          <div className="aspect-[16/9] w-full bg-slate-800 md:aspect-[16/7]">
+        <div className="overflow-hidden rounded-3xl border border-cyan-500/20 bg-slate-900">
+          <div className="aspect-[16/10] w-full bg-slate-800 sm:aspect-[16/9] md:aspect-[16/7]">
             {course.thumbnail_url ? (
               <img
                 src={course.thumbnail_url}
@@ -195,36 +206,36 @@ export default async function CourseDetailPage({
             )}
           </div>
 
-          <div className="p-5 md:p-8">
+          <div className="p-4 sm:p-5 md:p-8">
             <div className="mb-4 flex flex-wrap gap-2">
-              <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300 md:text-sm">
+              <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
                 {course.category}
               </span>
 
-              <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200 md:text-sm">
+              <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200">
                 {course.level}
               </span>
 
-              <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200 md:text-sm">
+              <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200">
                 {course.estimated_duration_hours} h
               </span>
 
-              <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200 md:text-sm">
+              <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200">
                 {course.instructor}
               </span>
 
               {course.is_featured && (
-                <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-300 md:text-sm">
-                  Mise en avant
+                <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-300">
+                  Recommandée
                 </span>
               )}
             </div>
 
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 md:text-sm">
-              Formation
+              Formation en ligne
             </p>
 
-            <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">
+            <h1 className="mb-4 text-2xl font-bold leading-tight sm:text-3xl md:text-5xl">
               {course.title}
             </h1>
 
@@ -232,30 +243,57 @@ export default async function CourseDetailPage({
               {course.short_description || "Description à compléter."}
             </p>
 
+            <div className="mb-6 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4 text-sm text-emerald-100">
+                ✅ Accès immédiat après achat
+              </div>
+              <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/10 p-4 text-sm text-cyan-100">
+                ✅ Formation disponible 24/7
+              </div>
+              <div className="rounded-2xl border border-amber-500/20 bg-amber-500/10 p-4 text-sm text-amber-100">
+                ✅ Certificat inclus
+              </div>
+            </div>
+
             <div className="mb-8 space-y-4">
-              <details
-                open
-                className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 md:p-5"
-              >
-                <summary className="cursor-pointer list-none text-base font-semibold text-white md:text-lg">
+              <details className="group rounded-2xl border border-slate-800 bg-slate-950/70 p-4 md:p-5">
+                <summary className="cursor-pointer list-none">
                   <div className="flex items-center justify-between gap-4">
-                    <span>Description détaillée</span>
-                    <span className="text-cyan-400">Ouvrir</span>
+                    <div>
+                      <p className="text-base font-semibold text-white md:text-lg">
+                        Description détaillée
+                      </p>
+                      <p className="mt-1 text-xs text-slate-400 sm:text-sm">
+                        Appuyez ici pour afficher le détail de la formation
+                      </p>
+                    </div>
+
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-cyan-500 text-xl font-bold text-slate-950 transition group-open:rotate-180">
+                      ↓
+                    </div>
                   </div>
                 </summary>
 
                 <div className="mt-4 rounded-xl bg-slate-900/40 p-4 md:p-5">
-                  <div className="space-y-4">
-                    {renderRichText(fullDescription)}
-                  </div>
+                  <div className="space-y-4">{renderRichText(fullDescription)}</div>
                 </div>
               </details>
 
-              <details className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 md:p-5">
-                <summary className="cursor-pointer list-none text-base font-semibold text-white md:text-lg">
+              <details className="group rounded-2xl border border-slate-800 bg-slate-950/70 p-4 md:p-5">
+                <summary className="cursor-pointer list-none">
                   <div className="flex items-center justify-between gap-4">
-                    <span>Programme de la formation</span>
-                    <span className="text-cyan-400">{course.modules.length} module(s)</span>
+                    <div>
+                      <p className="text-base font-semibold text-white md:text-lg">
+                        Programme de la formation
+                      </p>
+                      <p className="mt-1 text-xs text-slate-400 sm:text-sm">
+                        {course.modules.length} module(s) inclus — appuyez pour voir le programme
+                      </p>
+                    </div>
+
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-cyan-500 text-xl font-bold text-slate-950 transition group-open:rotate-180">
+                      ↓
+                    </div>
                   </div>
                 </summary>
 
@@ -298,15 +336,31 @@ export default async function CourseDetailPage({
               </details>
             </div>
 
-            <div className="flex flex-col gap-4 rounded-2xl border border-cyan-500/20 bg-slate-950/80 p-5 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-sm text-slate-400">Accès immédiat après achat</p>
-                <span className="mt-1 block text-2xl font-bold text-white md:text-3xl">
-                  {course.price_eur === "0.00" ? "Gratuit" : `${course.price_eur} €`}
-                </span>
+            <div id="achat" className="rounded-2xl border border-cyan-500/20 bg-slate-950/80 p-4 sm:p-5">
+              <div className="mb-5">
+                <p className="text-sm text-slate-400">Offre de lancement</p>
+
+                {course.price_eur === "0.00" ? (
+                  <span className="mt-1 block text-2xl font-bold text-white md:text-3xl">
+                    Gratuit
+                  </span>
+                ) : (
+                  <>
+                    <span className="mt-1 block text-sm text-slate-400 line-through">
+                      {course.price_eur} €
+                    </span>
+                    <span className="block text-2xl font-bold text-white md:text-3xl">
+                      {promoPrice} € avec le code {PROMO_CODE}
+                    </span>
+                  </>
+                )}
+
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  Utilisez le code promo au moment du paiement Stripe.
+                </p>
               </div>
 
-              <div className="w-full sm:w-auto">
+              <div className="w-full">
                 <BuyButton courseId={course.id} />
               </div>
             </div>
